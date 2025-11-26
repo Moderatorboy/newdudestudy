@@ -28,8 +28,8 @@ export type Lecture = {
 export const batches: Batch[] = [
   {
     id: 'class11',
-    name: 'Class 11 – JEE Foundation',
-    image: 'https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop',
+    name: 'AK Class 11',
+    image: '/batch1.jpg',
     subjects: [
       {
         id: 'physics',
