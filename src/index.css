@@ -1,0 +1,11 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth background gradient + particles helper */
+.bg-animated {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124, 58, 237, 0.25), transparent),
+              radial-gradient(900px 600px at 90% 30%, rgba(20, 184, 166, 0.15), transparent),
+              radial-gradient(1000px 800px at 50% 80%, rgba(59, 130, 246, 0.18), transparent);
+}
