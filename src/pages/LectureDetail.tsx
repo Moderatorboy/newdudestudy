@@ -4,11 +4,15 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Divider from '../components/Divider';
 import BackButton from '../components/BackButton';
-import { batches } from '../data/data';
+import { class11Batch, class12Batch } from '../data';   // ✅ fixed import
 import { randomQuote } from '../utils/quotes';
 
 export default function LectureDetail() {
   const { batchId, subjectId, chapterId, lectureId } = useParams();
+
+  // ✅ combine both batches into one array
+  const batches = [class11Batch, class12Batch];
+
   const batch = batches.find(b => b.id === batchId);
   const subject = batch?.subjects.find(s => s.id === subjectId);
   const chapter = subject?.chapters.find(c => c.id === chapterId);
@@ -29,7 +33,7 @@ export default function LectureDetail() {
         <div className="mt-6">
           <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow">
             <video
-              src={lecture.videoUrl}
+              src={lecture.video ?? lecture.videoUrl}   // ✅ handle both keys
               controls
               autoPlay
               className="w-full max-h-[60vh] bg-black"
