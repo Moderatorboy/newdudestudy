@@ -59,7 +59,7 @@ export const batches: Batch[] = [
       },
       {
         id: 'Jpsir11',
-        name: 'PHYSICS (NS SIR)',
+        name: 'PHYSICS (JP SIR)',
         image: '/jpsir.jpg',
         chapters: [
           {
@@ -140,7 +140,7 @@ export const batches: Batch[] = [
       {
         id: 'SKMSIR11',
         name: 'SKM (SKM SIR)',
-        image: 'skmsir.jpg',
+        image: '/skmsir.jpg',
         chapters: [
           {
             id: 'basic-cosffncepts',
@@ -212,7 +212,7 @@ export const batches: Batch[] = [
       },
       {
         id: 'Jpsir12',
-        name: 'PHYSICS (NS SIR)',
+        name: 'PHYSICS (JP SIR)',
         image: '/jpsir.jpg',
         chapters: [
           {
@@ -293,7 +293,7 @@ export const batches: Batch[] = [
       {
         id: 'SKMSIR12',
         name: 'SKM (SKM SIR)',
-        image: 'skmsir.jpg',
+        image: '/skmsir.jpg',
         chapters: [
           {
             id: 'basisacc-cosffncepts',
