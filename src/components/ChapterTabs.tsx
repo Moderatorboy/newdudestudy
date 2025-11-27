@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface Lecture {
   id: string;
@@ -25,20 +25,32 @@ export default function ChapterTabs({
   dppVideos,
   sheets,
   subjectImage,
+  batchId,
+  subjectId,
+  chapterId,
 }: ChapterTabsProps) {
   const [activeTab, setActiveTab] = useState<'lectures' | 'notes' | 'dppNotes' | 'dppVideos' | 'sheets'>('lectures');
   const [searchTerm, setSearchTerm] = useState('');
   const [completed, setCompleted] = useState<string[]>([]);
 
+  const storageKey = `completed_${batchId}_${subjectId}_${chapterId}`;
+
+  useEffect(() => {
+    const saved = localStorage.getItem(storageKey);
+    if (saved) setCompleted(JSON.parse(saved));
+  }, [storageKey]);
+
+  const toggleComplete = (id: string) => {
+    const updated = completed.includes(id)
+      ? completed.filter(i => i !== id)
+      : [...completed, id];
+    setCompleted(updated);
+    localStorage.setItem(storageKey, JSON.stringify(updated));
+  };
+
   const filteredLectures = lectures.filter(l =>
     l.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const toggleComplete = (id: string) => {
-    setCompleted(prev =>
-      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
-    );
-  };
 
   return (
     <div className="mt-6">
@@ -71,38 +83,42 @@ export default function ChapterTabs({
       {/* Tab Content */}
       <div className="mt-2">
         {activeTab === 'lectures' && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-4">
             {filteredLectures.map(l => (
               <div
                 key={l.id}
-                className="relative p-4 rounded-lg shadow hover:shadow-lg border cursor-pointer group transition overflow-hidden"
+                className="flex items-center justify-between p-4 rounded-lg shadow hover:shadow-md border cursor-pointer transition bg-white dark:bg-gray-900"
                 onClick={() => window.open(l.video, '_blank')}
               >
-                {/* Background image */}
+                {/* Left: Chapter image */}
                 {subjectImage && (
                   <img
                     src={subjectImage}
                     alt="Chapter"
-                    className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition"
+                    className="w-16 h-16 object-cover rounded mr-4"
                   />
                 )}
-                <div className="relative z-10">
-                  <h3 className="font-semibold text-lg mb-2">{l.title}</h3>
-                  <p className="text-sm text-gray-500">Click anywhere to open</p>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleComplete(l.id);
-                    }}
-                    className={`mt-2 text-sm px-3 py-1 rounded ${
-                      completed.includes(l.id)
-                        ? 'bg-green-500 text-white'
-                        : 'bg-gray-200 text-gray-700'
-                    }`}
-                  >
-                    {completed.includes(l.id) ? 'Completed' : 'Mark to complete'}
-                  </button>
+
+                {/* Center: Lecture title */}
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg">{l.title}</h3>
+                  <p className="text-sm text-gray-500">Click to open</p>
                 </div>
+
+                {/* Right: Mark to complete */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleComplete(l.id);
+                  }}
+                  className={`ml-4 text-sm px-3 py-1 rounded ${
+                    completed.includes(l.id)
+                      ? 'bg-green-500 text-white'
+                      : 'bg-gray-200 text-gray-700'
+                  }`}
+                >
+                  {completed.includes(l.id) ? 'Completed' : 'Mark to complete'}
+                </button>
               </div>
             ))}
           </div>
