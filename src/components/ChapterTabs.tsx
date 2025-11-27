@@ -27,10 +27,10 @@ export default function ChapterTabs() {
 
       {/* Tab content */}
       <div className="mt-4">
-        {activeTab === 'VIDEOS' && <div>🎥 Show lecture videos here</div>}
-        {activeTab === 'NOTES' && <div>📄 Show theory notes here</div>}
-        {activeTab === 'DPP PDF' && <div>📘 Show DPP PDFs here</div>}
-        {activeTab === 'DPP VIDEOS' && <div>🎬 Show DPP video lectures here</div>}
+        {activeTab === 'Videos' && <div>🎥 Show lecture videos here</div>}
+        {activeTab === 'Notes' && <div>📄 Show theory notes here</div>}
+        {activeTab === 'DPP Notes' && <div>📘 Show DPP PDFs here</div>}
+        {activeTab === 'DPP Videos' && <div>🎬 Show DPP video lectures here</div>}
       </div>
     </div>
   );
