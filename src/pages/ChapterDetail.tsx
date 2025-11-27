@@ -13,25 +13,18 @@ export default function ChapterDetail() {
   const subject = batch?.subjects.find(s => s.id === subjectId);
   const chapter = subject?.chapters.find(c => c.id === chapterId);
 
-  if (!chapter) {
-    return (
-      <Layout>
-        <BackButton label="Back to chapters" />
-        <p className="text-red-500 mt-4">Chapter not found.</p>
-      </Layout>
-    );
-  }
-
   return (
     <Layout>
       <BackButton label="Back to chapters" />
-      <h1 className="text-2xl font-bold mt-4">{chapter.name}</h1>
+
+      <h1 className="text-2xl font-bold mt-4">{chapter?.name}</h1>
+
       <ChapterTabs
-        lectures={chapter.lectures ?? []}
-        notes={chapter.notes ?? []}
-        dppNotes={chapter.dppNotes ?? []}
-        dppVideos={chapter.dppVideos ?? []}
-        sheets={chapter.sheets ?? []}
+        lectures={chapter?.lectures ?? []}
+        notes={chapter?.notes ?? []}
+        dppNotes={chapter?.dppNotes ?? []}
+        dppVideos={chapter?.dppVideos ?? []}
+        sheets={chapter?.sheets ?? []}  // 👈 new sheets support
         subjectImage={subject?.image}
         batchId={batchId}
         subjectId={subjectId}
