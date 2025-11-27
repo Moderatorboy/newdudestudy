@@ -1,4 +1,3 @@
-// src/pages/ChapterDetail.tsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../components/Layout';
@@ -18,7 +17,13 @@ export default function ChapterDetail() {
     <Layout>
       <BackButton label="Back to chapters" />
       <h1 className="text-2xl font-bold mt-4">{chapter?.name}</h1>
-      <ChapterTabs />
+      {/* 👇 Pass chapter data into tabs */}
+      <ChapterTabs
+        lectures={chapter?.lectures ?? []}
+        notes={chapter?.notes ?? []}
+        dppNotes={chapter?.dppNotes ?? []}
+        dppVideos={chapter?.dppVideos ?? []}
+      />
     </Layout>
   );
 }
