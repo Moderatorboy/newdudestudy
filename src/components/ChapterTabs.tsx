@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import confetti from 'canvas-confetti';
 
 interface Lecture {
   id: string;
@@ -19,80 +18,6 @@ interface ChapterTabsProps {
   chapterId?: string;
 }
 
-// Linear Gradient Progress Bar
-function GradientProgressBar({ total, completed }: { total: number; completed: number }) {
-  const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
-  return (
-    <div className="w-full mb-6">
-      <div className="w-full bg-gray-300 dark:bg-gray-700 rounded h-4 overflow-hidden">
-        <div
-          className="h-4 rounded transition-all duration-700"
-          style={{
-            width: `${percentage}%`,
-            background: 'linear-gradient(90deg, #3b82f6, #22c55e, #facc15)',
-          }}
-        />
-      </div>
-      <p className="text-sm mt-1 text-gray-600 dark:text-gray-300 font-semibold">
-        {percentage}% Completed
-      </p>
-    </div>
-  );
-}
-
-// Circular Progress Ring
-function CircularProgress({ total, completed }: { total: number; completed: number }) {
-  const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
-  const radius = 50;
-  const stroke = 8;
-  const normalizedRadius = radius - stroke * 2;
-  const circumference = normalizedRadius * 2 * Math.PI;
-  const strokeDashoffset = circumference - (percentage / 100) * circumference;
-
-  return (
-    <div className="flex flex-col items-center mb-6">
-      <svg height={radius * 2} width={radius * 2}>
-        <circle
-          stroke="#e5e7eb"
-          fill="transparent"
-          strokeWidth={stroke}
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-        />
-        <circle
-          stroke="url(#gradient)"
-          fill="transparent"
-          strokeWidth={stroke}
-          strokeLinecap="round"
-          strokeDasharray={circumference + ' ' + circumference}
-          style={{ strokeDashoffset, transition: 'stroke-dashoffset 0.7s ease' }}
-          r={normalizedRadius}
-          cx={radius}
-          cy={radius}
-        />
-        <defs>
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#3b82f6" />
-            <stop offset="50%" stopColor="#22c55e" />
-            <stop offset="100%" stopColor="#facc15" />
-          </linearGradient>
-        </defs>
-        <text
-          x="50%"
-          y="50%"
-          dy=".3em"
-          textAnchor="middle"
-          className="font-bold text-lg fill-gray-700 dark:fill-gray-200"
-        >
-          {percentage}%
-        </text>
-      </svg>
-      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Chapter Progress</p>
-    </div>
-  );
-}
-
 export default function ChapterTabs({
   lectures,
   notes,
@@ -102,13 +27,11 @@ export default function ChapterTabs({
   subjectImage,
   batchId,
   subjectId,
-  chapterId
+  chapterId,
 }: ChapterTabsProps) {
   const [activeTab, setActiveTab] = useState<'lectures' | 'notes' | 'dppNotes' | 'dppVideos' | 'sheets'>('lectures');
   const [searchTerm, setSearchTerm] = useState('');
   const [completed, setCompleted] = useState<string[]>([]);
-  const [overlayMessage, setOverlayMessage] = useState<string | null>(null);
-  const [progressMode, setProgressMode] = useState<'linear' | 'circular'>('linear');
 
   const storageKey = `completed_${batchId}_${subjectId}_${chapterId}`;
 
@@ -123,34 +46,23 @@ export default function ChapterTabs({
       : [...completed, id];
     setCompleted(updated);
     localStorage.setItem(storageKey, JSON.stringify(updated));
-
-    if (!completed.includes(id)) {
-      confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });
-      setOverlayMessage('✔ Well Done!');
-      setTimeout(() => setOverlayMessage(null), 2000);
-    }
   };
 
   const filteredLectures = lectures.filter(l =>
     l.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Emojis for tabs
   const tabLabels: Record<string, string> = {
     lectures: '🎥 Lectures',
     notes: '📒 Notes',
     dppNotes: '📝 DPP Notes',
     dppVideos: '📺 DPP Videos',
-    sheets: '📑 Sheets'
+    sheets: '📑 Sheets',
   };
 
   return (
-    <div className="mt-6 relative">
-      {overlayMessage && (
-        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg font-bold shadow-lg animate-fadeOut z-50">
-          {overlayMessage}
-        </div>
-      )}
-
+    <div className="mt-6">
       {/* Tabs */}
       <div className="flex space-x-4 border-b mb-4">
         {Object.keys(tabLabels).map(tab => (
@@ -163,12 +75,14 @@ export default function ChapterTabs({
             }`}
             onClick={() => setActiveTab(tab as any)}
           >
-            {tabLabels[tab]}
+            <span className="inline-block transition-transform duration-300 hover:animate-bounce">
+              {tabLabels[tab]}
+            </span>
           </button>
         ))}
       </div>
 
-      {/* Search Bar */}
+      {/* Search bar */}
       {activeTab === 'lectures' && (
         <input
           type="text"
@@ -179,67 +93,54 @@ export default function ChapterTabs({
         />
       )}
 
-      {/* Progress Toggle */}
-      {activeTab === 'lectures' && (
-        <div className="flex items-center space-x-4 mb-4">
-          <button
-            className={`px-3 py-1 rounded ${progressMode === 'linear' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-            onClick={() => setProgressMode('linear')}
-          >
-            📊 Linear
-          </button>
-          <button
-            className={`px-3 py-1 rounded ${progressMode === 'circular' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
-            onClick={() => setProgressMode('circular')}
-          >
-            🔵 Circular
-          </button>
-        </div>
-      )}
+      {/* Tab Content */}
+      <div className="mt-2 animate-fadeIn">
+        {activeTab === 'lectures' && (
+          <div className="space-y-4">
+            {filteredLectures.map(l => (
+              <div
+                key={l.id}
+                className="flex items-center justify-between p-4 rounded-lg shadow hover:shadow-md border cursor-pointer transition bg-white dark:bg-gray-900"
+                onClick={() => window.open(l.video, '_blank')}
+              >
+                {/* Left: Chapter image */}
+                {subjectImage && (
+                  <img
+                    src={subjectImage}
+                    alt="Chapter"
+                    className="w-16 h-16 object-contain rounded mr-4 bg-gray-100"
+                  />
+                )}
 
-      {/* Show correct progress UI */}
-      {activeTab === 'lectures' &&
-        (progressMode === 'linear'
-          ? <GradientProgressBar total={lectures.length} completed={completed.length} />
-          : <CircularProgress total={lectures.length} completed={completed.length} />
-        )
-      }
+                {/* Middle: Lecture title */}
+                <div className="flex-1">
+                  <h3 className="font-semibold text-lg">{l.title}</h3>
+                  <p className="text-sm text-gray-500">Click to open</p>
+                </div>
 
-      {/* TAB CONTENT */}
-      <div className="space-y-4">
-        {/* LECTURES */}
-        {activeTab === 'lectures' && filteredLectures.map(l => (
-          <div
-            key={l.id}
-            className="flex items-center justify-between p-4 rounded-lg shadow hover:shadow-md border cursor-pointer transition bg-white dark:bg-gray-900"
-            onClick={() => window.open(l.video, '_blank')}
-          >
-            {subjectImage && (
-              <img src={subjectImage} className="w-16 h-16 object-contain mr-4 rounded" />
-            )}
-            <div className="flex-1">
-              <h3 className="font-semibold">{l.title}</h3>
-              <p className="text-sm text-gray-500">Click to open</p>
-            </div>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleComplete(l.id);
-              }}
-              className={`ml-4 text-sm px-3 py-1 rounded ${
-                completed.includes(l.id) ? 'bg-green-500 text-white' : 'bg-gray-200'
-              }`}
-            >
-              {completed.includes(l.id) ? 'Completed' : 'Mark Done'}
-            </button>
+                {/* Right: Mark to complete */}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleComplete(l.id);
+                  }}
+                  className={`ml-4 text-sm px-3 py-1 rounded transition-all duration-500 transform ${
+                    completed.includes(l.id)
+                      ? 'bg-green-500 text-white scale-105'
+                      : 'bg-gray-200 text-gray-700'
+                  }`}
+                >
+                  {completed.includes(l.id) ? '✔ Completed' : 'Mark to complete'}
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-
-        {/* NOTES / DPP / SHEETS */}
-        {activeTab !== 'lectures' && (
-          <p className="text-gray-600 dark:text-gray-300">Coming soon...</p>
         )}
+
+        {activeTab === 'notes' && <p className="text-gray-600">Notes content here...</p>}
+        {activeTab === 'dppNotes' && <p className="text-gray-600">DPP Notes content here...</p>}
+        {activeTab === 'dppVideos' && <p className="text-gray-600">DPP Videos content here...</p>}
+        {activeTab === 'sheets' && <p className="text-gray-600">Sheets content here...</p>}
       </div>
     </div>
   );
