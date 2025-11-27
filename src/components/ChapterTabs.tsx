@@ -35,11 +35,13 @@ export default function ChapterTabs({
 
   const storageKey = `completed_${batchId}_${subjectId}_${chapterId}`;
 
+  // Load saved state
   useEffect(() => {
     const saved = localStorage.getItem(storageKey);
     if (saved) setCompleted(JSON.parse(saved));
   }, [storageKey]);
 
+  // Toggle complete
   const toggleComplete = (id: string) => {
     const updated = completed.includes(id)
       ? completed.filter(i => i !== id)
@@ -95,11 +97,11 @@ export default function ChapterTabs({
                   <img
                     src={subjectImage}
                     alt="Chapter"
-                    className="w-16 h-16 object-cover rounded mr-4"
+                    className="w-16 h-16 object-contain rounded mr-4 bg-gray-100"
                   />
                 )}
 
-                {/* Center: Lecture title */}
+                {/* Middle: Lecture title */}
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg">{l.title}</h3>
                   <p className="text-sm text-gray-500">Click to open</p>
@@ -111,13 +113,13 @@ export default function ChapterTabs({
                     e.stopPropagation();
                     toggleComplete(l.id);
                   }}
-                  className={`ml-4 text-sm px-3 py-1 rounded ${
+                  className={`ml-4 text-sm px-3 py-1 rounded transition-all duration-500 transform ${
                     completed.includes(l.id)
-                      ? 'bg-green-500 text-white'
+                      ? 'bg-green-500 text-white scale-105'
                       : 'bg-gray-200 text-gray-700'
                   }`}
                 >
-                  {completed.includes(l.id) ? 'Completed' : 'Mark to complete'}
+                  {completed.includes(l.id) ? '✔ Completed' : 'Mark to complete'}
                 </button>
               </div>
             ))}
