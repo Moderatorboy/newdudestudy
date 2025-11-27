@@ -1,7 +1,6 @@
 // src/pages/Subjects.tsx
 import React, { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Layout from '../components/Layout';          // ✅ use global Layout
 import SearchBar from '../components/SearchBar';
 import Divider from '../components/Divider';
 import CardGrid from '../components/CardGrid';
