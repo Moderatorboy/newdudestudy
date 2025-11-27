@@ -294,7 +294,6 @@ export const class11Batch: Batch = {
     { id: 'ns_ls74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
     { id: 'ns_ls84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
     { id: 'ns_ls94', title: 'Heat & Thermodynamics | Lecture 03 | Friction', video: 'https://rumble.com/embed/v9' }
-            }
           ]
         }
       ]
