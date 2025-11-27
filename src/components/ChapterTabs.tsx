@@ -54,11 +54,20 @@ export default function ChapterTabs({
     l.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // Emojis for tabs
+  const tabLabels: Record<string, string> = {
+    lectures: '🎥 Lectures',
+    notes: '📒 Notes',
+    dppNotes: '📝 DPP Notes',
+    dppVideos: '📺 DPP Videos',
+    sheets: '📑 Sheets',
+  };
+
   return (
     <div className="mt-6">
       {/* Tabs */}
       <div className="flex space-x-4 border-b mb-4">
-        {['lectures', 'notes', 'dppNotes', 'dppVideos', 'sheets'].map(tab => (
+        {Object.keys(tabLabels).map(tab => (
           <button
             key={tab}
             className={`px-4 py-2 transition ${
@@ -66,7 +75,7 @@ export default function ChapterTabs({
             }`}
             onClick={() => setActiveTab(tab as any)}
           >
-            {tab.toUpperCase()}
+            {tabLabels[tab]}
           </button>
         ))}
       </div>
@@ -76,7 +85,7 @@ export default function ChapterTabs({
         <input
           type="text"
           placeholder="Search lecture..."
-          className="w-full px-4 py-2 border rounded mb-6"
+          className="w-full px-4 py-2 border rounded mb-6 bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
