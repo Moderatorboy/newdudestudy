@@ -2,7 +2,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ParticleBg from './components/ParticleBg';
-import Layout from './components/Layout';
 import Home from './pages/Home';
 import Subjects from './pages/Subjects';
 import Chapters from './pages/Chapters';
@@ -15,16 +14,14 @@ export default function App() {
       {/* ✅ Particle background behind everything */}
       <ParticleBg className="absolute inset-0 -z-10" />
 
-      {/* ✅ Layout wraps all routes */}
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/batch/:batchId" element={<Subjects />} />
-          <Route path="/batch/:batchId/subject/:subjectId" element={<Chapters />} />
-          <Route path="/batch/:batchId/subject/:subjectId/chapter/:chapterId" element={<Lectures />} />
-          <Route path="/batch/:batchId/subject/:subjectId/chapter/:chapterId/lecture/:lectureId" element={<LectureDetail />} />
-        </Routes>
-      </Layout>
+      {/* ✅ Routes only, Layout handled inside each page */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/batch/:batchId" element={<Subjects />} />
+        <Route path="/batch/:batchId/subject/:subjectId" element={<Chapters />} />
+        <Route path="/batch/:batchId/subject/:subjectId/chapter/:chapterId" element={<Lectures />} />
+        <Route path="/batch/:batchId/subject/:subjectId/chapter/:chapterId/lecture/:lectureId" element={<LectureDetail />} />
+      </Routes>
     </div>
   );
 }
