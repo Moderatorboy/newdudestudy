@@ -1,4 +1,3 @@
-// src/pages/Lectures.tsx
 import React, { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
@@ -12,17 +11,19 @@ export default function Lectures() {
   const { batchId, subjectId, chapterId } = useParams();
   const [query, setQuery] = useState('');
 
+  // ✅ Find batch, subject, chapter
   const batches = [class11Batch, class12Batch];
   const batch = batches.find(b => b.id === batchId);
   const subject = batch?.subjects.find(s => s.id === subjectId);
   const chapter = subject?.chapters.find(c => c.id === chapterId);
 
-  // ✅ Load saved lectures from LocalStorage
+  // ✅ Load saved lectures from LocalStorage (with fallback to chapter lectures)
   const [lectures, setLectures] = useState(() => {
     const saved = localStorage.getItem(`lectures-${batchId}-${subjectId}-${chapterId}`);
     return saved ? JSON.parse(saved) : chapter?.lectures ?? [];
   });
 
+  // ✅ Filter lectures by search query
   const filtered = useMemo(() => {
     return lectures.filter(l =>
       l.title.toLowerCase().includes(query.toLowerCase())
@@ -49,14 +50,21 @@ export default function Lectures() {
       <SearchBar placeholder="Search lecture..." query={query} setQuery={setQuery} />
       <Divider />
       <BackButton label="Back to chapter" />
+
+      {/* ✅ Lecture list */}
       <div className="mt-6 space-y-4">
-        {filtered.map(l => (
-          <LectureCard
-            key={l.id}
-            lecture={{ ...l, image: chapter?.image }}
-            onToggleComplete={toggleComplete}
-          />
-        ))}
+        {filtered.length ? (
+          filtered.map(l => (
+            <LectureCard
+              key={l.id}
+              // ✅ Image fallback: use lecture.image, else chapter.image, else subject.image
+              lecture={{ ...l, image: l.image ?? chapter?.image ?? subject?.image }}
+              onToggleComplete={toggleComplete}
+            />
+          ))
+        ) : (
+          <p className="text-gray-500">No lectures found.</p>
+        )}
       </div>
     </div>
   );
