@@ -196,7 +196,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c8',
   name: 'FLUIDS',
-  photo: '/KINEMATICS.png',
+  photo: '/FLUIDS.png',
   lectures: [
     { id: 'ns_l43', title: 'Fluids | Lecture 01 | Motion Basics', video: 'https://rumble.com/embed/v4' },
     { id: 'ns_l53', title: 'Fluids | Lecture 02 | Equations of Motion', video: 'https://rumble.com/embed/v5' },
@@ -206,7 +206,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c9',
   name: 'SHM',
-  photo: '/LAWSMOTION.png',
+  photo: '/SHM.png',
   lectures: [
     { id: 'ns_l73', title: 'SHM | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
     { id: 'ns_l83', title: 'SHM | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
@@ -216,7 +216,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c10',
   name: 'SURFACE TENSION',
-  photo: '/KINEMATICS.png',
+  photo: '/SURFACETENSION.png',
   lectures: [
     { id: 'ns_l44', title: 'Surface Tension | Lecture 01 | Basics', video: 'https://rumble.com/embed/v4' },
     { id: 'ns_l54', title: 'Surface Tension | Lecture 02 | Equations of Motion', video: 'https://rumble.com/embed/v5' },
@@ -226,7 +226,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c11',
   name: 'HEAT AND THERMODYNAMICS',
-  photo: '/LAWSMOTION.png',
+  photo: '/HEATTHERMO.png',
   lectures: [
     { id: 'ns_l74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
     { id: 'ns_l84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
@@ -236,7 +236,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c12',
   name: 'WAVE',
-  photo: '/LAWSMOTION.png',
+  photo: '/WAVE.png',
   lectures: [
     { id: 'ns_l75', title: 'Wave | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
     { id: 'ns_l85', title: 'Wave | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
