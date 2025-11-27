@@ -5,20 +5,23 @@ import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import Divider from '../components/Divider';
 import BackButton from '../components/BackButton';
-import { class11Batch, class12Batch } from '../data';  // ✅ fixed import
+import { class11Batch, class12Batch } from '../data';
 import LectureCard from '../components/LectureCard';
 
 export default function Lectures() {
   const { batchId, subjectId, chapterId } = useParams();
   const [query, setQuery] = useState('');
 
-  // ✅ combine both batches into one array
   const batches = [class11Batch, class12Batch];
-
   const batch = batches.find(b => b.id === batchId);
   const subject = batch?.subjects.find(s => s.id === subjectId);
   const chapter = subject?.chapters.find(c => c.id === chapterId);
-  const [lectures, setLectures] = useState(chapter?.lectures ?? []);
+
+  // ✅ Load saved lectures from LocalStorage
+  const [lectures, setLectures] = useState(() => {
+    const saved = localStorage.getItem(`lectures-${batchId}-${subjectId}-${chapterId}`);
+    return saved ? JSON.parse(saved) : chapter?.lectures ?? [];
+  });
 
   const filtered = useMemo(() => {
     return lectures.filter(l =>
@@ -26,10 +29,18 @@ export default function Lectures() {
     );
   }, [lectures, query]);
 
+  // ✅ Toggle completion and save to LocalStorage
   const toggleComplete = (id: string) => {
-    setLectures(prev =>
-      prev.map(l => l.id === id ? { ...l, completed: !l.completed } : l)
-    );
+    setLectures(prev => {
+      const updated = prev.map(l =>
+        l.id === id ? { ...l, completed: !l.completed } : l
+      );
+      localStorage.setItem(
+        `lectures-${batchId}-${subjectId}-${chapterId}`,
+        JSON.stringify(updated)
+      );
+      return updated;
+    });
   };
 
   return (
@@ -42,7 +53,7 @@ export default function Lectures() {
         {filtered.map(l => (
           <LectureCard
             key={l.id}
-            lecture={{ ...l, image: chapter?.image }}   // ✅ add chapter image to lecture
+            lecture={{ ...l, image: chapter?.image }}
             onToggleComplete={toggleComplete}
           />
         ))}
