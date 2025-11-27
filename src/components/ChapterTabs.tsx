@@ -35,13 +35,11 @@ export default function ChapterTabs({
 
   const storageKey = `completed_${batchId}_${subjectId}_${chapterId}`;
 
-  // Load saved state
   useEffect(() => {
     const saved = localStorage.getItem(storageKey);
     if (saved) setCompleted(JSON.parse(saved));
   }, [storageKey]);
 
-  // Toggle complete
   const toggleComplete = (id: string) => {
     const updated = completed.includes(id)
       ? completed.filter(i => i !== id)
@@ -70,12 +68,16 @@ export default function ChapterTabs({
         {Object.keys(tabLabels).map(tab => (
           <button
             key={tab}
-            className={`px-4 py-2 transition ${
-              activeTab === tab ? 'border-b-2 border-blue-500 font-bold text-blue-600' : 'text-gray-500'
+            className={`px-4 py-2 transition transform ${
+              activeTab === tab
+                ? 'border-b-2 border-blue-500 font-bold text-blue-600 scale-105'
+                : 'text-gray-500 hover:scale-110'
             }`}
             onClick={() => setActiveTab(tab as any)}
           >
-            {tabLabels[tab]}
+            <span className="inline-block transition-transform duration-300 hover:animate-bounce">
+              {tabLabels[tab]}
+            </span>
           </button>
         ))}
       </div>
@@ -92,7 +94,7 @@ export default function ChapterTabs({
       )}
 
       {/* Tab Content */}
-      <div className="mt-2">
+      <div className="mt-2 animate-fadeIn">
         {activeTab === 'lectures' && (
           <div className="space-y-4">
             {filteredLectures.map(l => (
