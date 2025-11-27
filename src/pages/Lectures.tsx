@@ -1,47 +1,50 @@
-// src/pages/LectureDetail.tsx
-import React, { useEffect, useState } from 'react';
+// src/pages/Lectures.tsx
+import React, { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Layout from '../components/Layout';   // ✅ use Layout only
+import Layout from '../components/Layout';          // ✅ use global Layout
+import SearchBar from '../components/SearchBar';
+import Divider from '../components/Divider';
 import BackButton from '../components/BackButton';
 import { class11Batch, class12Batch } from '../data';
-import { randomQuote } from '../utils/quotes';
+import LectureCard from '../components/LectureCard';
 
-export default function LectureDetail() {
-  const { batchId, subjectId, chapterId, lectureId } = useParams();
+export default function Lectures() {
+  const { batchId, subjectId, chapterId } = useParams();
+  const [query, setQuery] = useState('');
 
   const batches = [class11Batch, class12Batch];
   const batch = batches.find(b => b.id === batchId);
   const subject = batch?.subjects.find(s => s.id === subjectId);
   const chapter = subject?.chapters.find(c => c.id === chapterId);
-  const lecture = chapter?.lectures.find(l => l.id === lectureId);
 
-  const [quote, setQuote] = useState(randomQuote());
+  const [lectures, setLectures] = useState(chapter?.lectures ?? []);
 
-  useEffect(() => {
-    setQuote(randomQuote());
-  }, [lectureId]);
+  const filtered = useMemo(() => {
+    return lectures.filter(l =>
+      l.title.toLowerCase().includes(query.toLowerCase())
+    );
+  }, [lectures, query]);
+
+  const toggleComplete = (id: string) => {
+    setLectures(prev =>
+      prev.map(l => l.id === id ? { ...l, completed: !l.completed } : l)
+    );
+  };
 
   return (
     <Layout>
-      <BackButton label="Back to lectures" />
-      {lecture ? (
-        <div className="mt-6">
-          <div className="rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow">
-            <video
-              src={lecture.video ?? lecture.videoUrl}
-              controls
-              autoPlay
-              className="w-full max-h-[60vh] bg-black"
-            />
-            <div className="p-4">
-              <h2 className="text-xl font-semibold">{lecture.title}</h2>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 italic">“{quote}”</p>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <p className="mt-6">Lecture not found.</p>
-      )}
+      <SearchBar placeholder="Search lecture..." query={query} setQuery={setQuery} />
+      <Divider />
+      <BackButton label="Back to chapter" />
+      <div className="mt-6 space-y-4">
+        {filtered.map(l => (
+          <LectureCard
+            key={l.id}
+            lecture={{ ...l, image: chapter?.image }}
+            onToggleComplete={toggleComplete}
+          />
+        ))}
+      </div>
     </Layout>
   );
 }
