@@ -59,3 +59,18 @@ export const class12Batch: Batch = {
       chapters: [
         {
           id: 'bas121ic-ctoncepts01',
+          name: 'Basic Concepts of Mathematics',
+          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
+          lectures: [
+            {
+              id: 'mlec12',
+              title: 'Algebra Essentials',
+              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
+              videoUrl: '/public/videos/sample-lecture.mp4'
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
