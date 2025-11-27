@@ -28,8 +28,9 @@ export default function Subjects() {
     id: s.id,
     name: s.name,
     image: s.image ?? s.photo, // ✅ handle both `image` or `photo`
-    to: `/batch/${batchId}/subject/${s.id}`
-  }));
+    to: `/batch/${batchId}/subject/${s.id}`,
+  subtitle: `${s.chapters?.length ?? 0} chapters`   // ✅ new line
+}));
 
   return (
     <div className="max-w-6xl mx-auto px-4 pt-6">
