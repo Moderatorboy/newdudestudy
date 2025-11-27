@@ -14,7 +14,7 @@ export const class11Batch: Batch = {
     {
       id: 'ns_c1',
       name: 'CO-ORDINATE SYSTEM & VECTORS',
-      photo: '/VECTOR.png',
+      image: '/VECTOR.png',
       lectures: [
         { id: "p1", title: "Coordinate Systems And Vectors | L-01 | Orientation", video: "https://rumble.com/embed/v4i7lnc/?pub=4" },
         { id: "p2", title: "Coordinate Systems And Vectors | L-02 | Vector", video: "https://rumble.com/embed/v4i7lnc/?pub=4" },
@@ -40,7 +40,7 @@ export const class11Batch: Batch = {
     {
       id: 'ns_c2',
       name: 'KINEMATICS',
-      photo: '/KINEMATICS.png',
+      image: '/KINEMATICS.png',
       lectures: [
         { id: "k1", title: "Kinematics | L-01 | Distance, Displacement, Velocity", video: "https://rumble.com/embed/NS2_1" },
         { id: "k2", title: "Kinematics | L-02 | Instantaneous & Average Velocity", video: "https://rumble.com/embed/NS2_2" },
@@ -72,7 +72,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c3',
   name: 'LAWS OF MOTION',
-  photo: '/LAWSMOTION.png',
+  image: '/LAWSMOTION.png',
   lectures: [
     { id: "l1", title: "Laws Of Motion | L-01 | Types Of Force", video: "https://rumble.com/embed/NS2_1" },
     { id: "l2", title: "Laws Of Motion | L-02 | Normal Force", video: "https://rumble.com/embed/NS2_2" },
@@ -104,7 +104,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c4',
   name: 'CIRCULAR MOTION',
-  photo: "/CIRCULAR.png",
+  image: "/CIRCULAR.png",
   lectures: [
     { id: "cm1", title: "Circular Motion | Lecture 01 | Basics", video: "https://rumble.com/embed/NS2_1" },
     { id: "cm2", title: "Circular Motion | Lecture 02 | Centripetal Force", video: "https://rumble.com/embed/NS2_2" },
@@ -118,7 +118,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c5',
   name: 'WORK POWER ENERGY',
-  photo: "/WORKPOWER.png",
+  image: "/WORKPOWER.png",
   lectures: [
     { id: "wpe1", title: "Work Power Energy | Lecture 01 | Basics", video: "https://rumble.com/embed/NS2_1" },
     { id: "wpe2", title: "Work Power Energy | Lecture 02 | Work Done by a Force", video: "https://rumble.com/embed/NS2_2" },
@@ -140,7 +140,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c6',
   name: 'CENTRE OF MASS',
-  photo: "/CENTREOFMASS.png",
+  image: "/CENTREOFMASS.png",
   lectures: [
     { id: "com1", title: "Centre of Mass | Lecture 01 | Basics", video: "https://rumble.com/embed/NS2_1" },
     { id: "com2", title: "Centre of Mass | Lecture 02 | Definition & Formula", video: "https://rumble.com/embed/NS2_2" },
@@ -165,7 +165,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c7',
   name: 'ROTATIONAL MOTION',
-  photo: "/ROTATIONAL.png",
+  image: "/ROTATIONAL.png",
   lectures: [
     { id: "rm1", title: "Rotational Motion | Lecture 01 | Basics", video: "https://rumble.com/embed/NS2_1" },
     { id: "rm2", title: "Rotational Motion | Lecture 02 | Angular Variables", video: "https://rumble.com/embed/NS2_2" },
@@ -196,7 +196,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c8',
   name: 'FLUIDS',
-  photo: '/FLUIDS.png',
+  image: '/FLUIDS.png',
   lectures: [
     { id: 'ns_l43', title: 'Fluids | Lecture 01 | Motion Basics', video: 'https://rumble.com/embed/v4' },
     { id: 'ns_l53', title: 'Fluids | Lecture 02 | Equations of Motion', video: 'https://rumble.com/embed/v5' },
@@ -206,7 +206,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c9',
   name: 'SHM',
-  photo: '/SHM.png',
+  image: '/SHM.png',
   lectures: [
     { id: 'ns_l73', title: 'SHM | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
     { id: 'ns_l83', title: 'SHM | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
@@ -216,7 +216,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c10',
   name: 'SURFACE TENSION',
-  photo: '/SURFACETENSION.png',
+  image: '/SURFACETENSION.png',
   lectures: [
     { id: 'ns_l44', title: 'Surface Tension | Lecture 01 | Basics', video: 'https://rumble.com/embed/v4' },
     { id: 'ns_l54', title: 'Surface Tension | Lecture 02 | Equations of Motion', video: 'https://rumble.com/embed/v5' },
@@ -226,7 +226,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c11',
   name: 'HEAT AND THERMODYNAMICS',
-  photo: '/HEATTHERMO.png',
+  image: '/HEATTHERMO.png',
   lectures: [
     { id: 'ns_l74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
     { id: 'ns_l84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
@@ -236,7 +236,7 @@ export const class11Batch: Batch = {
 {
   id: 'ns_c12',
   name: 'WAVE',
-  photo: '/WAVE.png',
+  image: '/WAVE.png',
   lectures: [
     { id: 'ns_l75', title: 'Wave | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
     { id: 'ns_l85', title: 'Wave | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
@@ -251,15 +251,13 @@ export const class11Batch: Batch = {
       image: '/jpsir.jpg',
       chapters: [
         {
-          id: 'basic-cgoncepts',
-          name: 'Basic Concepts of Chemistry',
-          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
-          lectures: [
-            {
-              id: 'l1h',
-              title: 'Mole Concept Essentials',
-              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
+          id: 'nsd_c11',
+  name: 'HEAT AND THERMODYNAMICS',
+  image: '/HEATTHERMO.png',
+  lectures: [
+    { id: 'ns_le74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
+    { id: 'ns_le84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
+    { id: 'ns_le94', title: 'Heat & Thermodynamics | Lecture 03 | Friction', video: 'https://rumble.com/embed/v9'
             }
           ]
         }
@@ -271,15 +269,13 @@ export const class11Batch: Batch = {
       image: '/vgsir.jpg',
       chapters: [
         {
-          id: 'basic-ctoncepts01',
-          name: 'Basic Concepts of Chemistry',
-          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
-          lectures: [
-            {
-              id: 'l102h',
-              title: 'Mole Concept Essentials',
-              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
+          id: 'ns_cds11',
+  name: 'HEAT AND THERMODYNAMICS',
+  image: '/HEATTHERMO.png',
+  lectures: [
+    { id: 'ns_ld74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
+    { id: 'ns_ld84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
+    { id: 'ns_ld94', title: 'Heat & Thermodynamics | Lecture 03 | Friction', video: 'https://rumble.com/embed/v9' 
             }
           ]
         }
@@ -291,15 +287,13 @@ export const class11Batch: Batch = {
       image: '/gbsir.jpg',
       chapters: [
         {
-          id: 'basic-contrcepts',
-          name: 'Basic Concepts of Chemistry',
-          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
-          lectures: [
-            {
-              id: 'l1wr',
-              title: 'Mole Concept Essentials',
-              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
+          id: 'ns_sc11',
+  name: 'HEAT AND THERMODYNAMICS',
+  image: '/HEATTHERMO.png',
+  lectures: [
+    { id: 'ns_ls74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
+    { id: 'ns_ls84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
+    { id: 'ns_ls94', title: 'Heat & Thermodynamics | Lecture 03 | Friction', video: 'https://rumble.com/embed/v9' }
             }
           ]
         }
@@ -311,16 +305,13 @@ export const class11Batch: Batch = {
       image: '/akksir.jpg',
       chapters: [
         {
-          id: 'basic-cosdncepts',
-          name: 'Basic Concepts of Chemistry',
-          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
-          lectures: [
-            {
-              id: 'l1jk',
-              title: 'Mole Concept Essentials',
-              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
-            }
+          id: 'nsv_c11',
+  name: 'HEAT AND THERMODYNAMICS',
+  image: '/HEATTHERMO.png',
+  lectures: [
+    { id: 'ns_lv74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
+    { id: 'ns_lv84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
+    { id: 'ns_lv94', title: 'Heat & Thermodynamics | Lecture 03 | Friction', video: 'https://rumble.com/embed/v9' }
           ]
         }
       ]
@@ -331,16 +322,13 @@ export const class11Batch: Batch = {
       image: '/skmsir.jpg',
       chapters: [
         {
-          id: 'basic-cosffncepts',
-          name: 'Basic Concepts of Chemistry',
-          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
-          lectures: [
-            {
-              id: 'l1ok',
-              title: 'Mole Concept Essentials',
-              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
-            }
+          id: 'ns_cm11',
+  name: 'HEAT AND THERMODYNAMICS',
+  image: '/HEATTHERMO.png',
+  lectures: [
+    { id: 'ns_lm74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
+    { id: 'ns_lm84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
+    { id: 'ns_lm94', title: 'Heat & Thermodynamics | Lecture 03 | Friction', video: 'https://rumble.com/embed/v9' }
           ]
         }
       ]
@@ -351,16 +339,13 @@ export const class11Batch: Batch = {
       image: '/vjsir.jpg',
       chapters: [
         {
-          id: 'basic-cokuhncepts',
-          name: 'Basic Concepts of Chemistry',
-          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
-          lectures: [
-            {
-              id: 'l1kjl',
-              title: 'Mole Concept Essentials',
-              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
-            }
+          id: 'ns_cn11',
+  name: 'HEAT AND THERMODYNAMICS',
+  image: '/HEATTHERMO.png',
+  lectures: [
+    { id: 'ns_ln74', title: 'Heat & Thermodynamics | Lecture 01 | Basics', video: 'https://rumble.com/embed/v7' },
+    { id: 'ns_ln84', title: 'Heat & Thermodynamics | Lecture 02 | Newton’s Laws', video: 'https://rumble.com/embed/v8' },
+    { id: 'ns_ln94', title: 'Heat & Thermodynamics | Lecture 03 | Friction', video: 'https://rumble.com/embed/v9' }
           ]
         }
       ]
