@@ -24,7 +24,7 @@ function GradientProgressBar({ total, completed }: { total: number; completed: n
   const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
   return (
     <div className="w-full mb-6">
-      <div className="w-full bg-gray-300 rounded h-4 overflow-hidden">
+      <div className="w-full bg-gray-300 dark:bg-gray-700 rounded h-4 overflow-hidden">
         <div
           className="h-4 rounded transition-all duration-700"
           style={{
@@ -33,7 +33,9 @@ function GradientProgressBar({ total, completed }: { total: number; completed: n
           }}
         />
       </div>
-      <p className="text-sm mt-1 text-gray-600 font-semibold">{percentage}% Completed</p>
+      <p className="text-sm mt-1 text-gray-600 dark:text-gray-300 font-semibold">
+        {percentage}% Completed
+      </p>
     </div>
   );
 }
@@ -81,12 +83,12 @@ function CircularProgress({ total, completed }: { total: number; completed: numb
           y="50%"
           dy=".3em"
           textAnchor="middle"
-          className="font-bold text-lg fill-gray-700"
+          className="font-bold text-lg fill-gray-700 dark:fill-gray-200"
         >
           {percentage}%
         </text>
       </svg>
-      <p className="mt-2 text-sm text-gray-600">Chapter Progress</p>
+      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">Chapter Progress</p>
     </div>
   );
 }
@@ -100,7 +102,7 @@ export default function ChapterTabs({
   subjectImage,
   batchId,
   subjectId,
-  chapterId,
+  chapterId
 }: ChapterTabsProps) {
   const [activeTab, setActiveTab] = useState<'lectures' | 'notes' | 'dppNotes' | 'dppVideos' | 'sheets'>('lectures');
   const [searchTerm, setSearchTerm] = useState('');
@@ -138,12 +140,11 @@ export default function ChapterTabs({
     notes: '📒 Notes',
     dppNotes: '📝 DPP Notes',
     dppVideos: '📺 DPP Videos',
-    sheets: '📑 Sheets',
+    sheets: '📑 Sheets'
   };
 
   return (
     <div className="mt-6 relative">
-      {/* Overlay */}
       {overlayMessage && (
         <div className="fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-lg font-bold shadow-lg animate-fadeOut z-50">
           {overlayMessage}
@@ -162,14 +163,12 @@ export default function ChapterTabs({
             }`}
             onClick={() => setActiveTab(tab as any)}
           >
-            <span className="inline-block transition-transform duration-300 hover:animate-bounce">
-              {tabLabels[tab]}
-            </span>
+            {tabLabels[tab]}
           </button>
         ))}
       </div>
 
-      {/* Search bar */}
+      {/* Search Bar */}
       {activeTab === 'lectures' && (
         <input
           type="text"
@@ -180,17 +179,17 @@ export default function ChapterTabs({
         />
       )}
 
-      {/* Progress Mode Toggle */}
+      {/* Progress Toggle */}
       {activeTab === 'lectures' && (
         <div className="flex items-center space-x-4 mb-4">
           <button
-            className={`px-3 py-1 rounded ${progressMode === 'linear' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+            className={`px-3 py-1 rounded ${progressMode === 'linear' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
             onClick={() => setProgressMode('linear')}
           >
             📊 Linear
           </button>
           <button
-            className={`px-3 py-1 rounded ${progressMode === 'circular' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-700'}`}
+            className={`px-3 py-1 rounded ${progressMode === 'circular' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
             onClick={() => setProgressMode('circular')}
           >
             🔵 Circular
@@ -198,42 +197,50 @@ export default function ChapterTabs({
         </div>
       )}
 
-      {/* Progress Bar */}
-      {activeTab === 'lectures' && (
-        progressMode === 'linear'
+      {/* Show correct progress UI */}
+      {activeTab === 'lectures' &&
+        (progressMode === 'linear'
           ? <GradientProgressBar total={lectures.length} completed={completed.length} />
           : <CircularProgress total={lectures.length} completed={completed.length} />
-      )}
+        )
+      }
 
-      {/* Tab Content */}
-      <div className="mt-2 animate-fadeIn">
-        {activeTab === 'lectures' && (
-          <div className="space-y-4">
-            {filteredLectures.map(l => (
-              <div
-                key={l.id}
-                className="flex items-center justify-between p-4 rounded-lg shadow hover:shadow-md border cursor-pointer transition bg-white dark:bg-gray-900"
-                onClick={() => window.open(l.video, '_blank')}
-              >
-                {subjectImage && (
-                  <img
-                    src={subjectImage}
-                    alt="Chapter"
-                    className="w-16 h-16 object-contain rounded mr-4 bg-gray-100"
-                  />
-                )}
-                <div className="flex-1">
-                  <h3 className="font-semibold text-lg">{l.title}</h3>
-                  <p className="text-sm text-gray-500">Click to open</p>
-                </div>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleComplete(l.id);
-                  }}
-                  className={`ml-4 text-sm px-3 py-1 rounded transition-all duration-500 transform ${
-                    completed.includes(l.id)
-                      ? 'bg-green-500 text-white scale-105'
-                      : 'bg-gray-200 text-gray-700'
-                  }`}
-                >
+      {/* TAB CONTENT */}
+      <div className="space-y-4">
+        {/* LECTURES */}
+        {activeTab === 'lectures' && filteredLectures.map(l => (
+          <div
+            key={l.id}
+            className="flex items-center justify-between p-4 rounded-lg shadow hover:shadow-md border cursor-pointer transition bg-white dark:bg-gray-900"
+            onClick={() => window.open(l.video, '_blank')}
+          >
+            {subjectImage && (
+              <img src={subjectImage} className="w-16 h-16 object-contain mr-4 rounded" />
+            )}
+            <div className="flex-1">
+              <h3 className="font-semibold">{l.title}</h3>
+              <p className="text-sm text-gray-500">Click to open</p>
+            </div>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleComplete(l.id);
+              }}
+              className={`ml-4 text-sm px-3 py-1 rounded ${
+                completed.includes(l.id) ? 'bg-green-500 text-white' : 'bg-gray-200'
+              }`}
+            >
+              {completed.includes(l.id) ? 'Completed' : 'Mark Done'}
+            </button>
+          </div>
+        ))}
+
+        {/* NOTES / DPP / SHEETS */}
+        {activeTab !== 'lectures' && (
+          <p className="text-gray-600 dark:text-gray-300">Coming soon...</p>
+        )}
+      </div>
+    </div>
+  );
+}
