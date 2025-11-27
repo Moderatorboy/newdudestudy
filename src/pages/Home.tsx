@@ -4,12 +4,18 @@ import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import Divider from '../components/Divider';
 import CardGrid from '../components/CardGrid';
-import { batches } from '../data/data';
+import { class11Batch, class12Batch } from '../data';  // ✅ import from index.ts
 
 export default function Home() {
   const [query, setQuery] = useState('');
+
+  // ✅ combine both batches into one array
+  const batches = [class11Batch, class12Batch];
+
   const filtered = useMemo(() => {
-    return batches.filter(b => b.name.toLowerCase().includes(query.toLowerCase()));
+    return batches.filter(b =>
+      b.name.toLowerCase().includes(query.toLowerCase())
+    );
   }, [query]);
 
   const items = filtered.map(b => ({
