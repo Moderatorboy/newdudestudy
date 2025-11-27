@@ -17,12 +17,16 @@ export default function ChapterDetail() {
     <Layout>
       <BackButton label="Back to chapters" />
       <h1 className="text-2xl font-bold mt-4">{chapter?.name}</h1>
-      {/* 👇 Pass chapter data into tabs */}
+      {/* ✅ Pass data + IDs for localStorage */}
       <ChapterTabs
         lectures={chapter?.lectures ?? []}
         notes={chapter?.notes ?? []}
         dppNotes={chapter?.dppNotes ?? []}
         dppVideos={chapter?.dppVideos ?? []}
+        subjectImage={subject?.image}
+        batchId={batchId}
+        subjectId={subjectId}
+        chapterId={chapterId}
       />
     </Layout>
   );
