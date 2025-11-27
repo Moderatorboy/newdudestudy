@@ -1,20 +1,18 @@
 // src/pages/Chapters.tsx
 import React, { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../components/Header';
+import Layout from '../components/Layout';   // ✅ use Layout only
 import SearchBar from '../components/SearchBar';
 import Divider from '../components/Divider';
-import CardGrid from '../components/CardGrid';
 import BackButton from '../components/BackButton';
-import { class11Batch, class12Batch } from '../data';  // ✅ import from index.ts
+import CardGrid from '../components/CardGrid';
+import { class11Batch, class12Batch } from '../data';
 
 export default function Chapters() {
   const { batchId, subjectId } = useParams();
   const [query, setQuery] = useState('');
 
-  // ✅ combine both batches into one array
   const batches = [class11Batch, class12Batch];
-
   const batch = batches.find(b => b.id === batchId);
   const subject = batch?.subjects.find(s => s.id === subjectId);
   const chapters = subject?.chapters ?? [];
@@ -28,17 +26,17 @@ export default function Chapters() {
   const items = filtered.map(c => ({
     id: c.id,
     name: c.name,
-    image: c.image ?? c.photo, // ✅ handle both `image` or `photo`
-    to: `/batch/${batchId}/subject/${subjectId}/chapter/${c.id}`
+    image: c.image,
+    to: `/batch/${batchId}/subject/${subjectId}/chapter/${c.id}`,
+    subtitle: `${c.lectures?.length ?? 0} lectures`
   }));
 
   return (
-    <div className="max-w-6xl mx-auto px-4 pt-6">
-      <Header />
+    <Layout>
       <SearchBar placeholder="Search chapter..." query={query} setQuery={setQuery} />
       <Divider />
       <BackButton label="Back to subjects" />
       <CardGrid items={items} />
-    </div>
+    </Layout>
   );
 }
