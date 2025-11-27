@@ -17,7 +17,7 @@ export default function CardGrid({ items }: { items: Item[] }) {
             <img
               src={item.image}
               alt={item.name}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-contain bg-black group-hover:scale-105 transition-transform duration-500"
             />
           </div>
           <div className="p-4">
