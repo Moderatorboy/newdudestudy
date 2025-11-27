@@ -6,12 +6,35 @@ type Props = {
   notes: any[];
   dppNotes: any[];
   dppVideos: any[];
+  subjectImage?: string;
+  batchId?: string;
+  subjectId?: string;
+  chapterId?: string;
 };
 
 const tabs = ['Videos', 'Notes', 'DPP Notes', 'DPP Videos'];
 
-export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos }: Props) {
+export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos, subjectImage, batchId, subjectId, chapterId }: Props) {
   const [activeTab, setActiveTab] = useState('Videos');
+
+  // ✅ LocalStorage integration
+  const [lectureState, setLectureState] = useState(() => {
+    const saved = localStorage.getItem(`lectures-${batchId}-${subjectId}-${chapterId}`);
+    return saved ? JSON.parse(saved) : lectures ?? [];
+  });
+
+  const toggleComplete = (id: string) => {
+    setLectureState(prev => {
+      const updated = prev.map(l =>
+        l.id === id ? { ...l, completed: !l.completed } : l
+      );
+      localStorage.setItem(
+        `lectures-${batchId}-${subjectId}-${chapterId}`,
+        JSON.stringify(updated)
+      );
+      return updated;
+    });
+  };
 
   return (
     <div className="mt-6">
@@ -36,8 +59,14 @@ export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos }: Pr
       <div className="mt-4">
         {activeTab === 'Videos' && (
           <div className="space-y-4">
-            {lectures.length ? (
-              lectures.map(l => <LectureCard key={l.id} lecture={l} />)
+            {lectureState.length ? (
+              lectureState.map(l => (
+                <LectureCard
+                  key={l.id}
+                  lecture={{ ...l, image: l.image ?? subjectImage }}
+                  onToggleComplete={toggleComplete}
+                />
+              ))
             ) : (
               <p>No videos available.</p>
             )}
@@ -45,21 +74,15 @@ export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos }: Pr
         )}
 
         {activeTab === 'Notes' && (
-          <div>
-            {notes.length ? notes.map((n, i) => <p key={i}>{n}</p>) : <p>No notes available.</p>}
-          </div>
+          <div>{notes.length ? notes.map((n, i) => <p key={i}>{n}</p>) : <p>No notes available.</p>}</div>
         )}
 
         {activeTab === 'DPP Notes' && (
-          <div>
-            {dppNotes.length ? dppNotes.map((d, i) => <p key={i}>{d}</p>) : <p>No DPP PDFs available.</p>}
-          </div>
+          <div>{dppNotes.length ? dppNotes.map((d, i) => <p key={i}>{d}</p>) : <p>No DPP PDFs available.</p>}</div>
         )}
 
         {activeTab === 'DPP Videos' && (
-          <div>
-            {dppVideos.length ? dppVideos.map((v, i) => <p key={i}>{v}</p>) : <p>No DPP videos available.</p>}
-          </div>
+          <div>{dppVideos.length ? dppVideos.map((v, i) => <p key={i}>{v}</p>) : <p>No DPP videos available.</p>}</div>
         )}
       </div>
     </div>
