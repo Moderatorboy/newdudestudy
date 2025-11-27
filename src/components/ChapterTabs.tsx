@@ -7,15 +7,16 @@ type Props = {
   notes: any[];
   dppNotes: any[];
   dppVideos: any[];
+  sheets?: any[];          // 👈 new prop for sheets
   subjectImage?: string;
   batchId?: string;
   subjectId?: string;
   chapterId?: string;
 };
 
-const tabs = ['Videos', 'Notes', 'DPP Notes', 'DPP Videos'];
+const tabs = ['Videos', 'Notes', 'DPP Notes', 'DPP Videos', 'Sheets']; // 👈 added Sheets
 
-export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos, subjectImage, batchId, subjectId, chapterId }: Props) {
+export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos, sheets = [], subjectImage, batchId, subjectId, chapterId }: Props) {
   const [activeTab, setActiveTab] = useState('Videos');
   const [query, setQuery] = useState('');
 
@@ -99,6 +100,11 @@ export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos, subj
 
         {activeTab === 'DPP Videos' && (
           <div>{dppVideos.length ? dppVideos.map((v, i) => <p key={i}>{v}</p>) : <p>No DPP videos available.</p>}</div>
+        )}
+
+        {/* ✅ New Sheets tab */}
+        {activeTab === 'Sheets' && (
+          <div>{sheets.length ? sheets.map((s, i) => <p key={i}>{s}</p>) : <p>No sheets available.</p>}</div>
         )}
       </div>
     </div>
