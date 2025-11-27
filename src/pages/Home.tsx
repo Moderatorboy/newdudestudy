@@ -1,10 +1,10 @@
 // src/pages/Home.tsx
 import React, { useMemo, useState } from 'react';
-import Header from '../components/Header';
+import Layout from '../components/Layout';   // ✅ use Layout only
 import SearchBar from '../components/SearchBar';
 import Divider from '../components/Divider';
 import CardGrid from '../components/CardGrid';
-import { class11Batch, class12Batch } from '../data';  // ✅ import from index.ts
+import { class11Batch, class12Batch } from '../data';
 
 export default function Home() {
   const [query, setQuery] = useState('');
@@ -26,11 +26,10 @@ export default function Home() {
   }));
 
   return (
-    <div className="max-w-6xl mx-auto px-4 pt-6">
-      <Header />
+    <Layout>
       <SearchBar placeholder="Search batch..." query={query} setQuery={setQuery} />
       <Divider />
       <CardGrid items={items} />
-    </div>
+    </Layout>
   );
 }
