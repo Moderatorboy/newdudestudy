@@ -1,9 +1,16 @@
-// src/components/ChapterTabs.tsx
 import React, { useState } from 'react';
+import LectureCard from './LectureCard';
+
+type Props = {
+  lectures: any[];
+  notes: any[];
+  dppNotes: any[];
+  dppVideos: any[];
+};
 
 const tabs = ['Videos', 'Notes', 'DPP Notes', 'DPP Videos'];
 
-export default function ChapterTabs() {
+export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos }: Props) {
   const [activeTab, setActiveTab] = useState('Videos');
 
   return (
@@ -27,10 +34,33 @@ export default function ChapterTabs() {
 
       {/* Tab content */}
       <div className="mt-4">
-        {activeTab === 'Videos' && <div>🎥 Show lecture videos here</div>}
-        {activeTab === 'Notes' && <div>📄 Show theory notes here</div>}
-        {activeTab === 'DPP Notes' && <div>📘 Show DPP PDFs here</div>}
-        {activeTab === 'DPP Videos' && <div>🎬 Show DPP video lectures here</div>}
+        {activeTab === 'Videos' && (
+          <div className="space-y-4">
+            {lectures.length ? (
+              lectures.map(l => <LectureCard key={l.id} lecture={l} />)
+            ) : (
+              <p>No videos available.</p>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'Notes' && (
+          <div>
+            {notes.length ? notes.map((n, i) => <p key={i}>{n}</p>) : <p>No notes available.</p>}
+          </div>
+        )}
+
+        {activeTab === 'DPP Notes' && (
+          <div>
+            {dppNotes.length ? dppNotes.map((d, i) => <p key={i}>{d}</p>) : <p>No DPP PDFs available.</p>}
+          </div>
+        )}
+
+        {activeTab === 'DPP Videos' && (
+          <div>
+            {dppVideos.length ? dppVideos.map((v, i) => <p key={i}>{v}</p>) : <p>No DPP videos available.</p>}
+          </div>
+        )}
       </div>
     </div>
   );
