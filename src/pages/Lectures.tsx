@@ -5,12 +5,15 @@ import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import Divider from '../components/Divider';
 import BackButton from '../components/BackButton';
-import { batches } from '../data/data';
+import { class11Batch, class12Batch } from '../data';  // ✅ fixed import
 import LectureCard from '../components/LectureCard';
 
 export default function Lectures() {
   const { batchId, subjectId, chapterId } = useParams();
   const [query, setQuery] = useState('');
+
+  // ✅ combine both batches into one array
+  const batches = [class11Batch, class12Batch];
 
   const batch = batches.find(b => b.id === batchId);
   const subject = batch?.subjects.find(s => s.id === subjectId);
@@ -18,11 +21,15 @@ export default function Lectures() {
   const [lectures, setLectures] = useState(chapter?.lectures ?? []);
 
   const filtered = useMemo(() => {
-    return lectures.filter(l => l.title.toLowerCase().includes(query.toLowerCase()));
+    return lectures.filter(l =>
+      l.title.toLowerCase().includes(query.toLowerCase())
+    );
   }, [lectures, query]);
 
   const toggleComplete = (id: string) => {
-    setLectures(prev => prev.map(l => l.id === id ? { ...l, completed: !l.completed } : l));
+    setLectures(prev =>
+      prev.map(l => l.id === id ? { ...l, completed: !l.completed } : l)
+    );
   };
 
   return (
