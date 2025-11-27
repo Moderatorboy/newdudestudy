@@ -12,42 +12,27 @@ export const class12Batch: Batch = {
       image: '/NSSIR.jpg',
       chapters: [
         {
-          id: 'kin2ematics01',
+          id: 'kinematics12',
           name: 'Kinematics',
-          image: 'https://images.unsplash.com/photo-1523978591478-c7539490f1c5?q=80&w=1200&auto=format&fit=crop',
+          image: '/KINEMATICS.png',   // ✅ uniform field name
           lectures: [
-            {
-              id: '2lb1',
-              title: 'Introduction to Kinematics',
-              thumbnail: 'https://images.unsplash.com/photo-1547350405-08e1e3cfe3d6?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
-            },
-            {
-              id: 'l2e2b',
-              title: 'Position, Displacement, and Velocity',
-              thumbnail: 'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
-            }
+            { id: 'l12_1', title: 'Introduction to Kinematics', video: '/public/videos/sample-lecture.mp4' },
+            { id: 'l12_2', title: 'Position, Displacement, and Velocity', video: '/public/videos/sample-lecture.mp4' }
           ]
         }
       ]
     },
     {
-      id: 'Jpsir12',
+      id: 'JPSIR12',
       name: 'PHYSICS (JP SIR)',
       image: '/jpsir.jpg',
       chapters: [
         {
-          id: 'bas3ic-cgoncepts',
+          id: 'basic-concepts12',
           name: 'Basic Concepts of Chemistry',
-          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
+          image: '/CHEMISTRY.png',   // ✅ uniform field name
           lectures: [
-            {
-              id: '3l1h',
-              title: 'Mole Concept Essentials',
-              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
-            }
+            { id: 'l12_3', title: 'Mole Concept Essentials', video: '/public/videos/sample-lecture.mp4' }
           ]
         }
       ]
@@ -58,16 +43,11 @@ export const class12Batch: Batch = {
       image: '/vgsir.jpg',
       chapters: [
         {
-          id: 'bas121ic-ctoncepts01',
+          id: 'basic-maths12',
           name: 'Basic Concepts of Mathematics',
-          image: 'https://images.unsplash.com/photo-1503342215300-b0a15cf3dfce?q=80&w=1200&auto=format&fit=crop',
+          image: '/MATHS.png',   // ✅ uniform field name
           lectures: [
-            {
-              id: 'mlec12',
-              title: 'Algebra Essentials',
-              thumbnail: 'https://images.unsplash.com/photo-1509256406117-0a5fce4b1f56?q=80&w=1200&auto=format&fit=crop',
-              videoUrl: '/public/videos/sample-lecture.mp4'
-            }
+            { id: 'l12_4', title: 'Algebra Essentials', video: '/public/videos/sample-lecture.mp4' }
           ]
         }
       ]
