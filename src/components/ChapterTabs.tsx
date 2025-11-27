@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import LectureCard from './LectureCard';
-import SearchBar from './SearchBar';   // 👈 import search bar
+import SearchBar from './SearchBar';
 
 type Props = {
   lectures: any[];
@@ -17,12 +17,20 @@ const tabs = ['Videos', 'Notes', 'DPP Notes', 'DPP Videos'];
 
 export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos, subjectImage, batchId, subjectId, chapterId }: Props) {
   const [activeTab, setActiveTab] = useState('Videos');
+  const [query, setQuery] = useState('');
 
   // ✅ LocalStorage integration
   const [lectureState, setLectureState] = useState(() => {
     const saved = localStorage.getItem(`lectures-${batchId}-${subjectId}-${chapterId}`);
     return saved ? JSON.parse(saved) : lectures ?? [];
   });
+
+  // ✅ Filter lectures by search query
+  const filtered = useMemo(() => {
+    return lectureState.filter(l =>
+      l.title.toLowerCase().includes(query.toLowerCase())
+    );
+  }, [lectureState, query]);
 
   const toggleComplete = (id: string) => {
     setLectureState(prev => {
@@ -56,12 +64,19 @@ export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos, subj
         ))}
       </div>
 
+      {/* ✅ Search bar only for Videos tab */}
+      {activeTab === 'Videos' && (
+        <div className="mt-4">
+          <SearchBar placeholder="Search lecture..." query={query} setQuery={setQuery} />
+        </div>
+      )}
+
       {/* Tab content */}
       <div className="mt-4">
         {activeTab === 'Videos' && (
           <div className="space-y-4">
-            {lectureState.length ? (
-              lectureState.map(l => (
+            {filtered.length ? (
+              filtered.map(l => (
                 <LectureCard
                   key={l.id}
                   lecture={{ ...l, image: l.image ?? subjectImage }}
@@ -69,7 +84,7 @@ export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos, subj
                 />
               ))
             ) : (
-              <p>No videos available.</p>
+              <p>No lectures found.</p>
             )}
           </div>
         )}
