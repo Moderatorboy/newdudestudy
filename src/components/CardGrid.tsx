@@ -21,7 +21,7 @@ export default function CardGrid({ items }: { items: Item[] }) {
             />
           </div>
           <div className="p-4">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{item.name}</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 text-center">{item.name}</h3>
           </div>
         </Link>
       ))}
