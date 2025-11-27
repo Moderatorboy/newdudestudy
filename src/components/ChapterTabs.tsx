@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 
-type ChapterTabsProps = {
-  lectures: any[];
+interface Lecture {
+  id: string;
+  title: string;
+  video: string;
+}
+
+interface ChapterTabsProps {
+  lectures: Lecture[];
   notes: any[];
   dppNotes: any[];
   dppVideos: any[];
@@ -10,61 +16,102 @@ type ChapterTabsProps = {
   batchId?: string;
   subjectId?: string;
   chapterId?: string;
-};
+}
 
 export default function ChapterTabs({
   lectures,
   notes,
   dppNotes,
   dppVideos,
-  sheets
+  sheets,
+  subjectImage,
 }: ChapterTabsProps) {
-  const [activeTab, setActiveTab] = useState('lectures');
+  const [activeTab, setActiveTab] = useState<'lectures' | 'notes' | 'dppNotes' | 'dppVideos' | 'sheets'>('lectures');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [completed, setCompleted] = useState<string[]>([]);
 
-  const tabs = [
-    { id: 'lectures', label: 'Lectures' },
-    { id: 'notes', label: 'Notes' },
-    { id: 'dppNotes', label: 'DPP Notes' },
-    { id: 'dppVideos', label: 'DPP Videos' },
-    { id: 'sheets', label: 'Sheets' }
-  ];
+  const filteredLectures = lectures.filter(l =>
+    l.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const toggleComplete = (id: string) => {
+    setCompleted(prev =>
+      prev.includes(id) ? prev.filter(i => i !== id) : [...prev, id]
+    );
+  };
 
   return (
     <div className="mt-6">
-      {/* Tab Buttons */}
-      <div className="flex gap-3 border-b pb-2">
-        {tabs.map(tab => (
+      {/* Tabs */}
+      <div className="flex space-x-4 border-b mb-4">
+        {['lectures', 'notes', 'dppNotes', 'dppVideos', 'sheets'].map(tab => (
           <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`px-4 py-2 rounded-md font-semibold ${
-              activeTab === tab.id
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-200 text-gray-700'
+            key={tab}
+            className={`px-4 py-2 transition ${
+              activeTab === tab ? 'border-b-2 border-blue-500 font-bold text-blue-600' : 'text-gray-500'
             }`}
+            onClick={() => setActiveTab(tab as any)}
           >
-            {tab.label}
+            {tab.toUpperCase()}
           </button>
         ))}
       </div>
 
-      {/* Content Rendering */}
-      <div className="mt-4">
+      {/* Search bar */}
+      {activeTab === 'lectures' && (
+        <input
+          type="text"
+          placeholder="Search lecture..."
+          className="w-full px-4 py-2 border rounded mb-6"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      )}
+
+      {/* Tab Content */}
+      <div className="mt-2">
         {activeTab === 'lectures' && (
-          <ul>{lectures.map((lec, index) => <li key={index}>{lec.title}</li>)}</ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredLectures.map(l => (
+              <div
+                key={l.id}
+                className="relative p-4 rounded-lg shadow hover:shadow-lg border cursor-pointer group transition overflow-hidden"
+                onClick={() => window.open(l.video, '_blank')}
+              >
+                {/* Background image */}
+                {subjectImage && (
+                  <img
+                    src={subjectImage}
+                    alt="Chapter"
+                    className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition"
+                  />
+                )}
+                <div className="relative z-10">
+                  <h3 className="font-semibold text-lg mb-2">{l.title}</h3>
+                  <p className="text-sm text-gray-500">Click anywhere to open</p>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleComplete(l.id);
+                    }}
+                    className={`mt-2 text-sm px-3 py-1 rounded ${
+                      completed.includes(l.id)
+                        ? 'bg-green-500 text-white'
+                        : 'bg-gray-200 text-gray-700'
+                    }`}
+                  >
+                    {completed.includes(l.id) ? 'Completed' : 'Mark to complete'}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         )}
-        {activeTab === 'notes' && (
-          <ul>{notes.map((note, index) => <li key={index}>{note.title}</li>)}</ul>
-        )}
-        {activeTab === 'dppNotes' && (
-          <ul>{dppNotes.map((note, index) => <li key={index}>{note.title}</li>)}</ul>
-        )}
-        {activeTab === 'dppVideos' && (
-          <ul>{dppVideos.map((vid, index) => <li key={index}>{vid.title}</li>)}</ul>
-        )}
-        {activeTab === 'sheets' && (
-          <ul>{sheets.map((sheet, index) => <li key={index}>{sheet.title}</li>)}</ul>
-        )}
+
+        {activeTab === 'notes' && <p className="text-gray-600">Notes content here...</p>}
+        {activeTab === 'dppNotes' && <p className="text-gray-600">DPP Notes content here...</p>}
+        {activeTab === 'dppVideos' && <p className="text-gray-600">DPP Videos content here...</p>}
+        {activeTab === 'sheets' && <p className="text-gray-600">Sheets content here...</p>}
       </div>
     </div>
   );
