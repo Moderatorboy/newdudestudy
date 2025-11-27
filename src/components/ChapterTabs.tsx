@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LectureCard from './LectureCard';
+import SearchBar from './SearchBar';   // 👈 import search bar
 
 type Props = {
   lectures: any[];
