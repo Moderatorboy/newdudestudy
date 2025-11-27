@@ -1,7 +1,7 @@
 // src/pages/Lectures.tsx
 import React, { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../components/Header';
+import Layout from '../components/Layout';          // ✅ use global Layout
 import SearchBar from '../components/SearchBar';
 import Divider from '../components/Divider';
 import BackButton from '../components/BackButton';
@@ -17,11 +17,7 @@ export default function Lectures() {
   const subject = batch?.subjects.find(s => s.id === subjectId);
   const chapter = subject?.chapters.find(c => c.id === chapterId);
 
-  // ✅ Load saved lectures from LocalStorage
-  const [lectures, setLectures] = useState(() => {
-    const saved = localStorage.getItem(`lectures-${batchId}-${subjectId}-${chapterId}`);
-    return saved ? JSON.parse(saved) : chapter?.lectures ?? [];
-  });
+  const [lectures, setLectures] = useState(chapter?.lectures ?? []);
 
   const filtered = useMemo(() => {
     return lectures.filter(l =>
@@ -29,23 +25,14 @@ export default function Lectures() {
     );
   }, [lectures, query]);
 
-  // ✅ Toggle completion and save to LocalStorage
   const toggleComplete = (id: string) => {
-    setLectures(prev => {
-      const updated = prev.map(l =>
-        l.id === id ? { ...l, completed: !l.completed } : l
-      );
-      localStorage.setItem(
-        `lectures-${batchId}-${subjectId}-${chapterId}`,
-        JSON.stringify(updated)
-      );
-      return updated;
-    });
+    setLectures(prev =>
+      prev.map(l => l.id === id ? { ...l, completed: !l.completed } : l)
+    );
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 pt-6">
-      <Header />
+    <Layout>
       <SearchBar placeholder="Search lecture..." query={query} setQuery={setQuery} />
       <Divider />
       <BackButton label="Back to chapter" />
@@ -58,6 +45,6 @@ export default function Lectures() {
           />
         ))}
       </div>
-    </div>
+    </Layout>
   );
 }
