@@ -8,8 +8,6 @@ import { class11Batch, class12Batch } from '../data';
 
 export default function Home() {
   const [query, setQuery] = useState('');
-
-  // ✅ combine both batches into one array
   const batches = [class11Batch, class12Batch];
 
   const filtered = useMemo(() => {
