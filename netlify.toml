@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "build"   # agar CRA use kar rahe ho
+  publish = "dist"   # agar CRA use kar rahe ho
   # publish = "dist"  # agar Vite use kar rahe ho
 
 [[redirects]]
