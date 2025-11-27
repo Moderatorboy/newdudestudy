@@ -40,7 +40,11 @@ export default function Lectures() {
       <BackButton label="Back to chapter" />
       <div className="mt-6 space-y-4">
         {filtered.map(l => (
-          <LectureCard key={l.id} lecture={l} onToggleComplete={toggleComplete} />
+          <LectureCard
+            key={l.id}
+            lecture={{ ...l, image: chapter?.image }}   // ✅ add chapter image to lecture
+            onToggleComplete={toggleComplete}
+          />
         ))}
       </div>
     </div>
