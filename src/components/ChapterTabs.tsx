@@ -1,34 +1,36 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import Layout from '../components/Layout';
-import BackButton from '../components/BackButton';
-import ChapterTabs from '../components/ChapterTabs';
-import { class11Batch, class12Batch } from '../data';
+import React, { useState } from 'react';
 
-export default function ChapterDetail() {
-  const { batchId, subjectId, chapterId } = useParams();
-
-  const batches = [class11Batch, class12Batch];
-  const batch = batches.find(b => b.id === batchId);
-  const subject = batch?.subjects.find(s => s.id === subjectId);
-  const chapter = subject?.chapters.find(c => c.id === chapterId);
+export default function ChapterTabs({ lectures, notes, dppNotes, dppVideos, sheets }) {
+  const [activeTab, setActiveTab] = useState('lectures');
 
   return (
-    <Layout>
-      <BackButton label="Back to chapters" />
-      <h1 className="text-2xl font-bold mt-4">{chapter?.name}</h1>
-      {/* ✅ Pass data + IDs for localStorage */}
-      <ChapterTabs
-        lectures={chapter?.lectures ?? []}
-        notes={chapter?.notes ?? []}
-        dppNotes={chapter?.dppNotes ?? []}
-        dppVideos={chapter?.dppVideos ?? []}
-        sheets={chapter?.sheets ?? []}   // 👈 new sheets prop
-        subjectImage={subject?.image}
-        batchId={batchId}
-        subjectId={subjectId}
-        chapterId={chapterId}
-      />
-    </Layout>
+    <div>
+      {/* Tabs */}
+      <div className="flex space-x-4 border-b">
+        {['lectures', 'notes', 'dppNotes', 'dppVideos', 'sheets'].map(tab => (
+          <button
+            key={tab}
+            className={`px-4 py-2 ${activeTab === tab ? 'border-b-2 border-blue-500 font-bold' : ''}`}
+            onClick={() => setActiveTab(tab)}
+          >
+            {tab.toUpperCase()}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab Content */}
+      <div className="mt-4">
+        {activeTab === 'lectures' && lectures.map(l => (
+          <div key={l.id}>
+            <h3>{l.title}</h3>
+            <iframe src={l.video} className="w-full h-64" allowFullScreen></iframe>
+          </div>
+        ))}
+        {activeTab === 'notes' && <p>Notes content here...</p>}
+        {activeTab === 'dppNotes' && <p>DPP Notes content here...</p>}
+        {activeTab === 'dppVideos' && <p>DPP Videos content here...</p>}
+        {activeTab === 'sheets' && <p>Sheets content here...</p>}
+      </div>
+    </div>
   );
 }
