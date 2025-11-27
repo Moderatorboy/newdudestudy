@@ -5,7 +5,7 @@ import ParticleBg from './components/ParticleBg';
 import Home from './pages/Home';
 import Subjects from './pages/Subjects';
 import Chapters from './pages/Chapters';
-import Lectures from './pages/Lectures';
+import ChapterDetail from './pages/ChapterDetail';   // 👈 import added
 import LectureDetail from './pages/LectureDetail';
 
 export default function App() {
@@ -19,7 +19,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/batch/:batchId" element={<Subjects />} />
         <Route path="/batch/:batchId/subject/:subjectId" element={<Chapters />} />
-        <Route path="/batch/:batchId/subject/:subjectId/chapter/:chapterId" element={<Lectures />} />
+        {/* 👇 Now ChapterDetail renders here */}
+        <Route path="/batch/:batchId/subject/:subjectId/chapter/:chapterId" element={<ChapterDetail />} />
         <Route path="/batch/:batchId/subject/:subjectId/chapter/:chapterId/lecture/:lectureId" element={<LectureDetail />} />
       </Routes>
     </div>
