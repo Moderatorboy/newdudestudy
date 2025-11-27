@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* ✅ Top header */}
       <Header />
 
-      {/* ✅ Main content with bottom padding */}
+      {/* ✅ Main content with bottom spacing */}
       <main className="flex-1 max-w-6xl mx-auto px-4 pt-6 pb-16">
         {children}
       </main>
