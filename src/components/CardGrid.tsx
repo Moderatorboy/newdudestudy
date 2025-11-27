@@ -2,7 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-type Item = { id: string; name: string; image: string; to: string };
+type Item = { 
+  id: string; 
+  name: string; 
+  image: string; 
+  to: string; 
+  subtitle?: string;   // ✅ optional subtitle field
+};
 
 export default function CardGrid({ items }: { items: Item[] }) {
   return (
@@ -27,6 +33,11 @@ export default function CardGrid({ items }: { items: Item[] }) {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
               {item.name}
             </h3>
+            {item.subtitle && (
+              <p className="text-sm font-light text-gray-500">
+                {item.subtitle}
+              </p>
+            )}
           </div>
         </Link>
       ))}
