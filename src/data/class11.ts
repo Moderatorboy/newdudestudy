@@ -348,8 +348,17 @@ export const class11Batch: Batch = {
       lectures: [
         { id: 'NOM_L01', title: 'Nomenclature | Lecture 01 | IUPAC Basics', video: 'https://rumble.com/embed/v6z9cu8/?pub=4no3cq' },
         { id: 'NOM_L02', title: 'Nomenclature | Lecture 02 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9cvy/?pub=4no3cq' },
-        { id: 'NOM_L03', title: 'Nomenclature | Lecture 03 | Functional Groups Priority', video: 'https://rumble.com/embed/vabc03/' },
-        { id: 'NOM_L04', title: 'Nomenclature | Lecture 04 | IUPAC Naming Practice', video: 'https://rumble.com/embed/vabc04/' }
+        { id: 'NOM_L03', title: 'Nomenclature | Lecture 03 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9d58/?pub=4no3cq' },
+        { id: 'NOM_L04', title: 'Nomenclature | Lecture 04 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9ddk/?pub=4no3cq' },
+        { id: 'NOM_L05', title: 'Nomenclature | Lecture 05 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dge/?pub=4no3cq' },
+        { id: 'NOM_L06', title: 'Nomenclature | Lecture 06 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9di6/?pub=4no3cq' },
+        { id: 'NOM_L07', title: 'Nomenclature | Lecture 07 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dl2/?pub=4no3cq' },
+        { id: 'NOM_L08', title: 'Nomenclature | Lecture 08 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dmo/?pub=4no3cq' },
+        { id: 'NOM_L09', title: 'Nomenclature | Lecture 09 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9dpi/?pub=4no3cq' },
+        { id: 'NOM_L10', title: 'Nomenclature | Lecture 10 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dra/?pub=4no3cq' },
+        { id: 'NOM_L11', title: 'Nomenclature | Lecture 11 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dtc/?pub=4no3cq' },
+        { id: 'NOM_L12', title: 'Nomenclature | Lecture 12 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9dvo/?pub=4no3cq' },
+        { id: 'NOM_L13', title: 'Nomenclature | Lecture 13 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dxu/?pub=4no3cq' }
       ]
     },
 
@@ -359,10 +368,26 @@ export const class11Batch: Batch = {
       name: 'GENERAL ORGANIC CHEMISTRY (GOC)',
       image: '/goc.png',
       lectures: [
-        { id: 'GOC_L01', title: 'GOC | Lecture 01 | Electronic Effects', video: 'https://rumble.com/embed/vdef01/' },
-        { id: 'GOC_L02', title: 'GOC | Lecture 02 | Inductive & Resonance Effect', video: 'https://rumble.com/embed/vdef02/' },
-        { id: 'GOC_L03', title: 'GOC | Lecture 03 | Electromeric & Hyperconjugation', video: 'https://rumble.com/embed/vdef03/' },
-        { id: 'GOC_L04', title: 'GOC | Lecture 04 | Acidic & Basic Strength', video: 'https://rumble.com/embed/vdef04/' }
+        { id: 'GOC_L01', title: 'GOC | Lecture 01 | Electronic Effects', video: 'https://rumble.com/embed/v6z9uwc/?pub=4no3cq' },
+        { id: 'GOC_L02', title: 'GOC | Lecture 02 | Inductive & Resonance Effect', video: 'https://rumble.com/embed/v6z9v2o/?pub=4no3cq' },
+        { id: 'GOC_L03', title: 'GOC | Lecture 03 | Electromeric & Hyperconjugation', video: 'https://rumble.com/embed/v6z9v9s/?pub=4no3cq' },
+        { id: 'GOC_L04', title: 'GOC | Lecture 04 | Acidic & Basic Strength', video: 'https://rumble.com/embed/v6z9vf6/?pub=4no3cq' },
+        { id: 'GOC_L05', title: 'GOC | Lecture 05 | Inductive & Resonance Effect', video: 'https://rumble.com/embed/v6z9vma/?pub=4no3cq' },
+        { id: 'GOC_L06', title: 'GOC | Lecture 06 | Electromeric & Hyperconjugation', video: 'https://rumble.com/embed/v6z9vqk/?pub=4no3cq' },
+        { id: 'GOC_L07', title: 'GOC | Lecture 07 | Acidic & Basic Strength', video: 'https://rumble.com/embed/v6z9vwk/?pub=4no3cq' },
+        { id: 'GOC_L08', title: 'GOC | Lecture 08 | Inductive & Resonance Effect', video: 'https://rumble.com/embed/v6z9w4u/?pub=4no3cq' },
+        { id: 'GOC_L09', title: 'GOC | Lecture 09 | Electromeric & Hyperconjugation', video: 'https://rumble.com/embed/v6z9wbc/?pub=4no3cq' },
+        { id: 'GOC_L10', title: 'GOC | Lecture 10 | Acidic & Basic Strength', video: 'https://rumble.com/embed/v6z9wh4/?pub=4no3cq' },
+        { id: 'GOC_L11', title: 'GOC | Lecture 11 | Inductive & Resonance Effect', video: 'https://rumble.com/embed/v6z9wlm/?pub=4no3cq' },
+        { id: 'GOC_L12', title: 'GOC | Lecture 12 | Electromeric & Hyperconjugation', video: 'https://rumble.com/embed/v6z9wqq/?pub=4no3cq' },
+        { id: 'GOC_L13', title: 'GOC | Lecture 13 | Acidic & Basic Strength', video: 'hhttps://rumble.com/embed/v6z9x7e/?pub=4no3cq' },
+        { id: 'GOC_L14', title: 'GOC | Lecture 14 | Inductive & Resonance Effect', video: 'https://rumble.com/embed/v6z9xc8/?pub=4no3cq' },
+        { id: 'GOC_L15', title: 'GOC | Lecture 15 | Electromeric & Hyperconjugation', video: 'https://rumble.com/embed/v6z9xiu/?pub=4no3cq' },
+        { id: 'GOC_L16', title: 'GOC | Lecture 16 | Acidic & Basic Strength', video: 'https://rumble.com/embed/v6z9xnm/?pub=4no3cq' },
+        { id: 'GOC_L17', title: 'GOC | Lecture 17 | Inductive & Resonance Effect', video: 'https://rumble.com/embed/v6z9xpc/?pub=4no3cq' },
+        { id: 'GOC_L18', title: 'GOC | Lecture 18 | Electromeric & Hyperconjugation', video: 'https://rumble.com/embed/v6z9xy2/?pub=4no3cq' },
+        { id: 'GOC_L19', title: 'GOC | Lecture 19 | Acidic & Basic Strength', video: 'https://rumble.com/embed/v6z9y0w/?pub=4no3cq' },
+        { id: 'GOC_L20', title: 'GOC | Lecture 20 | Inductive & Resonance Effect', video: 'https://rumble.com/embed/v6z9y3s/?pub=4no3cq' }
       ]
     },
 
@@ -372,10 +397,14 @@ export const class11Batch: Batch = {
       name: 'ISOMERISM',
       image: '/isomerism.png',
       lectures: [
-        { id: 'ISO_L01', title: 'Isomerism | Lecture 01 | Classification of Isomers', video: 'https://rumble.com/embed/vghi01/' },
-        { id: 'ISO_L02', title: 'Isomerism | Lecture 02 | Structural Isomerism', video: 'https://rumble.com/embed/vghi02/' },
-        { id: 'ISO_L03', title: 'Isomerism | Lecture 03 | Geometrical Isomerism', video: 'https://rumble.com/embed/vghi03/' },
-        { id: 'ISO_L04', title: 'Isomerism | Lecture 04 | Optical Isomerism', video: 'https://rumble.com/embed/vghi04/' }
+        { id: 'ISO_L01', title: 'Isomerism | Lecture 01 | Classification of Isomers', video: 'https://rumble.com/embed/v6za078/?pub=4no3cq' },
+        { id: 'ISO_L02', title: 'Isomerism | Lecture 02 | Structural Isomerism', video: 'https://rumble.com/embed/v6za0hy/?pub=4no3cq' },
+        { id: 'ISO_L03', title: 'Isomerism | Lecture 03 | Geometrical Isomerism', video: 'https://rumble.com/embed/v6za0wq/?pub=4no3cq' },
+        { id: 'ISO_L04', title: 'Isomerism | Lecture 04 | Optical Isomerism', video: 'https://rumble.com/embed/v6za12u/?pub=4no3cq' },
+        { id: 'ISO_L05', title: 'Isomerism | Lecture 05 | Structural Isomerism', video: 'https://rumble.com/embed/v6za15c/?pub=4no3cq' },
+        { id: 'ISO_L06', title: 'Isomerism | Lecture 06 | Geometrical Isomerism', video: 'https://rumble.com/embed/v6za19k/?pub=4no3cq' },
+        { id: 'ISO_L07', title: 'Isomerism | Lecture 07 | Optical Isomerism', video: 'https://rumble.com/embed/v6za1d2/?pub=4no3cq' },
+        { id: 'ISO_L08', title: 'Isomerism | Lecture 08 | Structural Isomerism', video: 'https://rumble.com/embed/v6za1g8/?pub=4no3cq' }
           ]
         }
       ]
