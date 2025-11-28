@@ -346,8 +346,8 @@ export const class11Batch: Batch = {
       name: 'NOMENCLATURE',
       image: '/nomenclature.png',
       lectures: [
-        { id: 'NOM_L01', title: 'Nomenclature | Lecture 01 | IUPAC Basics', video: 'https://rumble.com/embed/vabc01/' },
-        { id: 'NOM_L02', title: 'Nomenclature | Lecture 02 | Longest Chain Rule', video: 'https://rumble.com/embed/vabc02/' },
+        { id: 'NOM_L01', title: 'Nomenclature | Lecture 01 | IUPAC Basics', video: 'https://rumble.com/embed/v6z9cu8/?pub=4no3cq' },
+        { id: 'NOM_L02', title: 'Nomenclature | Lecture 02 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9cvy/?pub=4no3cq' },
         { id: 'NOM_L03', title: 'Nomenclature | Lecture 03 | Functional Groups Priority', video: 'https://rumble.com/embed/vabc03/' },
         { id: 'NOM_L04', title: 'Nomenclature | Lecture 04 | IUPAC Naming Practice', video: 'https://rumble.com/embed/vabc04/' }
       ]
