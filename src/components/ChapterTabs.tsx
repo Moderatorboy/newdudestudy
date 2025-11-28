@@ -12,7 +12,7 @@ interface ChapterTabsProps {
   dppNotes: any[];
   dppVideos: any[];
   sheets: any[];
-  subjectImage?: string;
+  chapterImage?: string;
   batchId?: string;
   subjectId?: string;
   chapterId?: string;
@@ -24,7 +24,7 @@ export default function ChapterTabs({
   dppNotes,
   dppVideos,
   sheets,
-  subjectImage,
+  chapterImage,
   batchId,
   subjectId,
   chapterId,
@@ -104,9 +104,9 @@ export default function ChapterTabs({
                 onClick={() => window.open(l.video, '_blank')}
               >
                 {/* Left: Chapter image */}
-                {subjectImage && (
+                {chapterImage && (
                   <img
-                    src={subjectImage}
+                    src={chapterImage}
                     alt="Chapter"
                     className="w-16 h-16 object-contain rounded mr-4 bg-gray-100"
                   />
