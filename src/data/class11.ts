@@ -339,40 +339,55 @@ export const class11Batch: Batch = {
     { id: 'BOC_L10', title: 'BOC | Lecture 10 | Homologous Series & Classification', video: 'https://rumble.com/embed/v6z978g/' }
   ],
   notes: [
-    { id: 'n1', title: 'Basic-Organic-Chemistry-L01', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L01.pdf' },
-    { id: 'n2', title: 'Basic-Organic-Chemistry-L02', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L02.pdf' },
-    { id: 'n3', title: 'Basic-Organic-Chemistry-L03', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L03.pdf' },
-    { id: 'n4', title: 'Basic-Organic-Chemistry-L04', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L04.pdf' },
-    { id: 'n5', title: 'Basic-Organic-Chemistry-L05', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L05.pdf' },
-    { id: 'n6', title: 'Basic-Organic-Chemistry-L06', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L06.pdf' },
-    { id: 'n7', title: 'Basic-Organic-Chemistry-L07', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L07.pdf' },
-    { id: 'n8', title: 'Basic-Organic-Chemistry-L08', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L08.pdf' },
-    { id: 'n9', title: 'Basic-Organic-Chemistry-L09', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L09.pdf' },
-    { id: 'n10', title: 'Basic-Organic-Chemistry-L10', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L10.pdf' }
+    { id: 'n1', title: 'Basic-Organic-Chemistry-Lecture 01', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L01.pdf' },
+    { id: 'n2', title: 'Basic-Organic-Chemistry-Lecture 02', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L02.pdf' },
+    { id: 'n3', title: 'Basic-Organic-Chemistry-Lecture 03', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L03.pdf' },
+    { id: 'n4', title: 'Basic-Organic-Chemistry-Lecture 04', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L04.pdf' },
+    { id: 'n5', title: 'Basic-Organic-Chemistry-Lecture 05', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L05.pdf' },
+    { id: 'n6', title: 'Basic-Organic-Chemistry-Lecture 06', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L06.pdf' },
+    { id: 'n7', title: 'Basic-Organic-Chemistry-Lecture 07', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L07.pdf' },
+    { id: 'n8', title: 'Basic-Organic-Chemistry-Lecture 08', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L08.pdf' },
+    { id: 'n9', title: 'Basic-Organic-Chemistry-Lecture 09', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L09.pdf' },
+    { id: 'n10', title: 'Basic-Organic-Chemistry-Lecture 10', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L10.pdf' }
   ]
 },
 
     // CHAPTER 2 - NOMENCLATURE
     {
-      id: 'c14',
-      name: 'NOMENCLATURE',
-      image: '/nomenclature.png',
-      lectures: [
-        { id: 'NOM_L01', title: 'Nomenclature | Lecture 01 | IUPAC Basics', video: 'https://rumble.com/embed/v6z9cu8/?pub=4no3cq' },
-        { id: 'NOM_L02', title: 'Nomenclature | Lecture 02 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9cvy/?pub=4no3cq' },
-        { id: 'NOM_L03', title: 'Nomenclature | Lecture 03 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9d58/?pub=4no3cq' },
-        { id: 'NOM_L04', title: 'Nomenclature | Lecture 04 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9ddk/?pub=4no3cq' },
-        { id: 'NOM_L05', title: 'Nomenclature | Lecture 05 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dge/?pub=4no3cq' },
-        { id: 'NOM_L06', title: 'Nomenclature | Lecture 06 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9di6/?pub=4no3cq' },
-        { id: 'NOM_L07', title: 'Nomenclature | Lecture 07 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dl2/?pub=4no3cq' },
-        { id: 'NOM_L08', title: 'Nomenclature | Lecture 08 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dmo/?pub=4no3cq' },
-        { id: 'NOM_L09', title: 'Nomenclature | Lecture 09 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9dpi/?pub=4no3cq' },
-        { id: 'NOM_L10', title: 'Nomenclature | Lecture 10 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dra/?pub=4no3cq' },
-        { id: 'NOM_L11', title: 'Nomenclature | Lecture 11 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dtc/?pub=4no3cq' },
-        { id: 'NOM_L12', title: 'Nomenclature | Lecture 12 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9dvo/?pub=4no3cq' },
-        { id: 'NOM_L13', title: 'Nomenclature | Lecture 13 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dxu/?pub=4no3cq' }
-      ]
-    },
+  id: 'c14',
+  name: 'NOMENCLATURE',
+  image: '/nomenclature.png',
+  lectures: [
+    { id: 'NOM_L01', title: 'Nomenclature | Lecture 01 | IUPAC Basics', video: 'https://rumble.com/embed/v6z9cu8/?pub=4no3cq' },
+    { id: 'NOM_L02', title: 'Nomenclature | Lecture 02 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9cvy/?pub=4no3cq' },
+    { id: 'NOM_L03', title: 'Nomenclature | Lecture 03 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9d58/?pub=4no3cq' },
+    { id: 'NOM_L04', title: 'Nomenclature | Lecture 04 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9ddk/?pub=4no3cq' },
+    { id: 'NOM_L05', title: 'Nomenclature | Lecture 05 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dge/?pub=4no3cq' },
+    { id: 'NOM_L06', title: 'Nomenclature | Lecture 06 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9di6/?pub=4no3cq' },
+    { id: 'NOM_L07', title: 'Nomenclature | Lecture 07 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dl2/?pub=4no3cq' },
+    { id: 'NOM_L08', title: 'Nomenclature | Lecture 08 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dmo/?pub=4no3cq' },
+    { id: 'NOM_L09', title: 'Nomenclature | Lecture 09 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9dpi/?pub=4no3cq' },
+    { id: 'NOM_L10', title: 'Nomenclature | Lecture 10 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dra/?pub=4no3cq' },
+    { id: 'NOM_L11', title: 'Nomenclature | Lecture 11 | Longest Chain Rule', video: 'https://rumble.com/embed/v6z9dtc/?pub=4no3cq' },
+    { id: 'NOM_L12', title: 'Nomenclature | Lecture 12 | Functional Groups Priority', video: 'https://rumble.com/embed/v6z9dvo/?pub=4no3cq' },
+    { id: 'NOM_L13', title: 'Nomenclature | Lecture 13 | IUPAC Naming Practice', video: 'https://rumble.com/embed/v6z9dxu/?pub=4no3cq' }
+  ],
+  notes: [
+    { id: 'n1', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 01', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L01.pdf' },
+    { id: 'n2', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 02', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L02.pdf' },
+    { id: 'n3', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 03', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L03.pdf' },
+    { id: 'n4', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 04', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L04.pdf' },
+    { id: 'n5', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 05', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L05.pdf' },
+    { id: 'n6', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 06', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L06.pdf' },
+    { id: 'n7', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 07', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L07.pdf' },
+    { id: 'n8', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 08', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L08.pdf' },
+    { id: 'n9', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 09', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L09.pdf' },
+    { id: 'n10', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 10', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L10.pdf' },
+    { id: 'n11', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 11', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L11.pdf' },
+    { id: 'n12', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 12', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L12.pdf' },
+    { id: 'n13', title: 'Classification-And-Nomenclature-Of-Organic-Compounds-Lecture 13', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/nomenclature/Classification-And-Nomenclature-Of-Organic-Compounds-L13.pdf' }
+  ]
+},
 
     // CHAPTER 3 - GOC
     {
