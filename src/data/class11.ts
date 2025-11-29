@@ -323,22 +323,34 @@ export const class11Batch: Batch = {
       chapters: [
     // CHAPTER 1 - BOC
     {
-      id: 'c13',
-      name: 'BASICS OF ORGANIC CHEMISTRY',
-      image: '/boc.png',
-      lectures: [
-        { id: 'BOC_L01', title: 'BOC | Lecture 01 | Introduction', video: 'https://rumble.com/embed/v6z8x3y/?pub=4no3cq' },
-        { id: 'BOC_L02', title: 'BOC | Lecture 02', video: 'https://rumble.com/embed/v6z8z2s/?pub=4no3cq' },
-        { id: 'BOC_L03', title: 'BOC | Lecture 03', video: 'https://rumble.com/embed/v6z94fo/' },
-        { id: 'BOC_L04', title: 'BOC | Lecture 04', video: 'https://rumble.com/embed/v6z9502/' },
-        { id: 'BOC_L05', title: 'BOC | Lecture 05', video: 'https://rumble.com/embed/v6z94wg/' },
-        { id: 'BOC_L06', title: 'BOC | Lecture 06', video: 'https://rumble.com/embed/v6z7h8k/' },
-        { id: 'BOC_L07', title: 'BOC | Lecture 07', video: 'https://rumble.com/embed/v6z96xi/' },
-        { id: 'BOC_L08', title: 'BOC | Lecture 08', video: 'https://rumble.com/embed/v6z971a/' },
-        { id: 'BOC_L09', title: 'BOC | Lecture 09 | Functional Group', video: 'https://rumble.com/embed/v6z9740/' },
-        { id: 'BOC_L10', title: 'BOC | Lecture 10 | Homologous Series & Classification', video: 'https://rumble.com/embed/v6z978g/' }
-      ]
-    },
+  id: 'c13',
+  name: 'BASICS OF ORGANIC CHEMISTRY',
+  image: '/boc.png',
+  lectures: [
+    { id: 'BOC_L01', title: 'BOC | Lecture 01 | Introduction', video: 'https://rumble.com/embed/v6z8x3y/?pub=4no3cq' },
+    { id: 'BOC_L02', title: 'BOC | Lecture 02', video: 'https://rumble.com/embed/v6z8z2s/?pub=4no3cq' },
+    { id: 'BOC_L03', title: 'BOC | Lecture 03', video: 'https://rumble.com/embed/v6z94fo/' },
+    { id: 'BOC_L04', title: 'BOC | Lecture 04', video: 'https://rumble.com/embed/v6z9502/' },
+    { id: 'BOC_L05', title: 'BOC | Lecture 05', video: 'https://rumble.com/embed/v6z94wg/' },
+    { id: 'BOC_L06', title: 'BOC | Lecture 06', video: 'https://rumble.com/embed/v6z7h8k/' },
+    { id: 'BOC_L07', title: 'BOC | Lecture 07', video: 'https://rumble.com/embed/v6z96xi/' },
+    { id: 'BOC_L08', title: 'BOC | Lecture 08', video: 'https://rumble.com/embed/v6z971a/' },
+    { id: 'BOC_L09', title: 'BOC | Lecture 09 | Functional Group', video: 'https://rumble.com/embed/v6z9740/' },
+    { id: 'BOC_L10', title: 'BOC | Lecture 10 | Homologous Series & Classification', video: 'https://rumble.com/embed/v6z978g/' }
+  ],
+  notes: [
+    { id: 'n1', title: 'Basic-Organic-Chemistry-L01', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L01.pdf' },
+    { id: 'n2', title: 'Basic-Organic-Chemistry-L02', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L02.pdf' },
+    { id: 'n3', title: 'Basic-Organic-Chemistry-L03', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L03.pdf' },
+    { id: 'n4', title: 'Basic-Organic-Chemistry-L04', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L04.pdf' },
+    { id: 'n5', title: 'Basic-Organic-Chemistry-L05', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L05.pdf' },
+    { id: 'n6', title: 'Basic-Organic-Chemistry-L06', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L06.pdf' },
+    { id: 'n7', title: 'Basic-Organic-Chemistry-L07', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L07.pdf' },
+    { id: 'n8', title: 'Basic-Organic-Chemistry-L08', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L08.pdf' },
+    { id: 'n9', title: 'Basic-Organic-Chemistry-L09', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L09.pdf' },
+    { id: 'n10', title: 'Basic-Organic-Chemistry-L10', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/boc/Basic-Organic-Chemistry-L10.pdf' }
+  ]
+},
 
     // CHAPTER 2 - NOMENCLATURE
     {
