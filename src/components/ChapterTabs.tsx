@@ -6,9 +6,15 @@ interface Lecture {
   video: string;
 }
 
+interface Note {
+  id: string;
+  title: string;
+  url: string;
+}
+
 interface ChapterTabsProps {
   lectures: Lecture[];
-  notes: any[];
+  notes: Note[];
   dppNotes: any[];
   dppVideos: any[];
   sheets: any[];
@@ -95,6 +101,7 @@ export default function ChapterTabs({
 
       {/* Tab Content */}
       <div className="mt-2 animate-fadeIn">
+        {/* LECTURES */}
         {activeTab === 'lectures' && (
           <div className="space-y-4">
             {filteredLectures.map(l => (
@@ -137,7 +144,31 @@ export default function ChapterTabs({
           </div>
         )}
 
-        {activeTab === 'notes' && <p className="text-gray-600">Notes content here...</p>}
+        {/* NOTES */}
+        {activeTab === 'notes' && notes.length > 0 ? (
+          <div className="space-y-4">
+            {notes.map(note => (
+              <div
+                key={note.id}
+                className="flex items-center justify-between p-4 rounded-lg shadow border bg-white dark:bg-gray-900"
+              >
+                <h3 className="font-semibold">{note.title}</h3>
+                <a
+                  href={note.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-4 px-3 py-1 rounded bg-blue-500 text-white hover:bg-blue-600"
+                >
+                  📥 Download
+                </a>
+              </div>
+            ))}
+          </div>
+        ) : activeTab === 'notes' && (
+          <p className="text-gray-600">No notes available yet.</p>
+        )}
+
+        {/* DPP / SHEETS */}
         {activeTab === 'dppNotes' && <p className="text-gray-600">DPP Notes content here...</p>}
         {activeTab === 'dppVideos' && <p className="text-gray-600">DPP Videos content here...</p>}
         {activeTab === 'sheets' && <p className="text-gray-600">Sheets content here...</p>}
