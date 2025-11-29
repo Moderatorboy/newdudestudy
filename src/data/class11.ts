@@ -442,20 +442,30 @@ export const class11Batch: Batch = {
 
     // CHAPTER 4 - ISOMERISM
     {
-      id: 'c16',
-      name: 'ISOMERISM',
-      image: '/isomerism.png',
-      lectures: [
-        { id: 'ISO_L01', title: 'Isomerism | Lecture 01 | Classification of Isomers', video: 'https://rumble.com/embed/v6za078/?pub=4no3cq' },
-        { id: 'ISO_L02', title: 'Isomerism | Lecture 02 | Structural Isomerism', video: 'https://rumble.com/embed/v6za0hy/?pub=4no3cq' },
-        { id: 'ISO_L03', title: 'Isomerism | Lecture 03 | Geometrical Isomerism', video: 'https://rumble.com/embed/v6za0wq/?pub=4no3cq' },
-        { id: 'ISO_L04', title: 'Isomerism | Lecture 04 | Optical Isomerism', video: 'https://rumble.com/embed/v6za12u/?pub=4no3cq' },
-        { id: 'ISO_L05', title: 'Isomerism | Lecture 05 | Structural Isomerism', video: 'https://rumble.com/embed/v6za15c/?pub=4no3cq' },
-        { id: 'ISO_L06', title: 'Isomerism | Lecture 06 | Geometrical Isomerism', video: 'https://rumble.com/embed/v6za19k/?pub=4no3cq' },
-        { id: 'ISO_L07', title: 'Isomerism | Lecture 07 | Optical Isomerism', video: 'https://rumble.com/embed/v6za1d2/?pub=4no3cq' },
-        { id: 'ISO_L08', title: 'Isomerism | Lecture 08 | Structural Isomerism', video: 'https://rumble.com/embed/v6za1g8/?pub=4no3cq' }
-          ]
-        }
+  id: 'c16',
+  name: 'ISOMERISM',
+  image: '/isomerism.png',
+  lectures: [
+    { id: 'ISO_L01', title: 'Isomerism | Lecture 01 | Classification of Isomers', video: 'https://rumble.com/embed/v6za078/?pub=4no3cq' },
+    { id: 'ISO_L02', title: 'Isomerism | Lecture 02 | Structural Isomerism', video: 'https://rumble.com/embed/v6za0hy/?pub=4no3cq' },
+    { id: 'ISO_L03', title: 'Isomerism | Lecture 03 | Geometrical Isomerism', video: 'https://rumble.com/embed/v6za0wq/?pub=4no3cq' },
+    { id: 'ISO_L04', title: 'Isomerism | Lecture 04 | Optical Isomerism', video: 'https://rumble.com/embed/v6za12u/?pub=4no3cq' },
+    { id: 'ISO_L05', title: 'Isomerism | Lecture 05 | Structural Isomerism', video: 'https://rumble.com/embed/v6za15c/?pub=4no3cq' },
+    { id: 'ISO_L06', title: 'Isomerism | Lecture 06 | Geometrical Isomerism', video: 'https://rumble.com/embed/v6za19k/?pub=4no3cq' },
+    { id: 'ISO_L07', title: 'Isomerism | Lecture 07 | Optical Isomerism', video: 'https://rumble.com/embed/v6za1d2/?pub=4no3cq' },
+    { id: 'ISO_L08', title: 'Isomerism | Lecture 08 | Structural Isomerism', video: 'https://rumble.com/embed/v6za1g8/?pub=4no3cq' }
+  ],
+  notes: [
+    { id: 'n1', title: 'Isomerism-Lecture 01', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/isomerism/Isomerism-L01.pdf' },
+    { id: 'n2', title: 'Isomerism-Lecture 02', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/isomerism/Isomerism-L02.pdf' },
+    { id: 'n3', title: 'Isomerism-Lecture 03', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/isomerism/Isomerism-L03.pdf' },
+    { id: 'n4', title: 'Isomerism-Lecture 04', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/isomerism/Isomerism-L04.pdf' },
+    { id: 'n5', title: 'Isomerism-Lecture 05', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/isomerism/Isomerism-L05.pdf' },
+    { id: 'n6', title: 'Isomerism-Lecture 06', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/isomerism/Isomerism-L06.pdf' },
+    { id: 'n7', title: 'Isomerism-Lecture 07', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/isomerism/Isomerism-L07.pdf' },
+    { id: 'n8', title: 'Isomerism-Lecture 08', url: 'https://moderatorboy.github.io/rediatenotes/pdfs/skmsir11notes/isomerism/Isomerism-L08.pdf' }
+  ]
+}
       ]
     },
     {
